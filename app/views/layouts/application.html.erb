@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AChieve</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<%= image_tag "/assets/logo_achieve.png", :size => "200x66" %>
+<%= link_to "Users", users_path %>
+<%= link_to "Jobs", jobs_path %>
+
+<%= yield %>
+
+</body>
+</html>
