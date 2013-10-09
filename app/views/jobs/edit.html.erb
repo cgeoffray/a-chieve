@@ -2,5 +2,14 @@
 
 <%= render 'form' %>
 
+<h3>Videos:</h3>
+<% @job.videos.each do |video| %>
+<div>
+	<%= video.title %> - <%= link_to "show", video.video_url %>
+</div>
+<% end %>
+
+<%= link_to 'New video', new_job_video_path(@job) %>
+
 <%= link_to 'Show', @job %> |
 <%= link_to 'Back', jobs_path %>

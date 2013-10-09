@@ -1,6 +1,8 @@
 AChieve::Application.routes.draw do
+  
+  resources :videos, :only => [:destroy, :show, :edit, :update]
   resources :jobs do
-    resources :videos
+    resources :videos, :only => [:create, :index, :new]
   end
 
   resources :users
