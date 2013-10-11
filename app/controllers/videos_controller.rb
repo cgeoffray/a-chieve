@@ -1,12 +1,5 @@
 class VideosController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
-
-  def index
-    @videos = Video.all
-  end
-
-  def show
-  end
+  #before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   def new
     @job = Job.find(params[:job_id])
@@ -28,6 +21,16 @@ class VideosController < ApplicationController
         format.html { render action: 'new' }
         format.json { render json: @video.errors, status: :unprocessable_entity }
       end
+    end
+  end
+
+  def destroy
+    video = Video.find(params[:id])
+    job = video.job
+    video.destroy
+    respond_to do |format|
+      format.html { redirect_to edit_job_path(job) }
+      format.json { head :no_content }
     end
   end
 
