@@ -6,8 +6,6 @@ AChieve::Application.routes.draw do
     resources :videos, :only => [:create, :index, :new]
   end
 
-  resources :users
-
   root :to => "jobs#index"
 
   # The priority is based upon order of creation: first created -> highest priority.
