@@ -1,10 +1,27 @@
 class JobsController < ApplicationController
   before_action :set_job, only: [:show, :edit, :update, :destroy]
+  skip_before_filter :verify_authenticity_token
 
   # GET /jobs
   # GET /jobs.json
   def index
-    @jobs = Job.includes(:videos).all
+    if params["search"].nil? or params["search"]==""
+      @jobs = Job.includes(:videos).all
+      @search = ""
+    else
+      @jobs = Job.includes(:videos).where("title LIKE ?", params["search"])
+      @search = params["search"]
+    end
+  end
+
+  def admin
+    if params["search"].nil? or params["search"]==""
+      @jobs = Job.includes(:videos).all
+      @search = ""
+    else
+      @jobs = Job.includes(:videos).where("title LIKE ?", params["search"])
+      @search = params["search"]
+    end
   end
 
   # GET /jobs/1

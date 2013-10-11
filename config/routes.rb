@@ -1,5 +1,5 @@
 AChieve::Application.routes.draw do
-  
+
   resources :videos, :only => [:destroy, :show, :edit, :update]
   resources :jobs do
     resources :videos, :only => [:create, :index, :new]
@@ -8,6 +8,11 @@ AChieve::Application.routes.draw do
   resources :users
 
   root :to => "jobs#index"
+
+  post "/" => "jobs#index"
+
+  get "/admin" => "jobs#admin"
+  post "/admin" => "jobs#admin"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
