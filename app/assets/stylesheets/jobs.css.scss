@@ -6,3 +6,61 @@
 	display:inline-block;
 	vertical-align: top;
 }
+
+#search{
+  input{
+    width: 60%;
+    height: 25px;
+    margin-left: 15%;
+    margin-right: 2%;
+    margin-top: 30px;
+  }
+  a{
+    //background-image: linear-gradient(rgb(50,100,200),rgb(40,80,180));
+  }
+  h2,h4{
+    text-align: center;
+  }
+  h2{padding-top:50px;}
+
+  .btn{
+    vertical-align: top;
+    line-height: 28px;
+    margin-top: 30px;
+    margin-bottom: 50px;
+  }
+  a:visited{color: #ffffff;}
+
+  border-bottom: #5d75fa 2px solid;
+}
+
+#explore{
+  h2,h4{
+    text-align: center;
+  }
+  h2{padding-top:40px;
+    padding-bottom: 40px;
+  }
+
+}
+
+.item{
+  width: 320px;
+  height: 240px;
+  background: white;
+  overflow: hidden;
+  margin-left: 6.5px;
+  margin-bottom: 12px;
+  border: darkgrey 1px solid;
+
+  .img-cont{
+    margin-left: 3px;
+    width: 314px;
+    height: 187px;
+    overflow: hidden;
+  }
+  h3{
+    text-align: center;
+    margin: 5px;
+  }
+}

@@ -1,9 +1,78 @@
+<section id="search">
+  <h2>
+    Search for Career information
+  </h2>
+  <h4>
+    Enter a profession's name or search for a specific video
+  </h4>
+  <form action="/" method="POST">
+    <input name="search" type="text" placeholder="Architect, James Bond, etc." value="<%= @search %>"/>
+    <input type="submit" class="btn btn-small btn-primary"/>
+  </form>
+</section>
 
-<h1>What kind of job?</h1>
-<form action="/" method="POST">
-  <input name="search" type="text" value="<%= @search %>"/>
-  <input type="submit">
-</form>
+<section id="explore">
+  <h2>Explore our database of career paths</h2>
+
+  <div id="container" class="js-masonry"
+       data-masonry-options='{ "columnWidth": 333, "itemSelector": ".item" }'>
+    <div class="item">
+      <h3>Doctor</h3>
+      <div class="img-cont">
+        <img src="/assets/doctor.jpg" alt="">
+      </div>
+    </div>
+    <div class="item">
+      <h3>Architect</h3>
+      <div class="img-cont">
+        <img src="/assets/architect.jpg" alt="">
+      </div>
+    </div>
+    <div class="item">
+      <h3>Chef</h3>
+      <div class="img-cont">
+        <img src="/assets/chef.jpg" alt="">
+      </div>
+    </div>
+    <div class="item">
+      <h3>Lawyer</h3>
+      <div class="img-cont">
+        <img src="/assets/lawyer.jpg" alt="">
+      </div>
+    </div>
+    <div class="item">
+      <h3>Engineer</h3>
+      <div class="img-cont">
+        <img src="/assets/engineers.jpg" alt="">
+      </div>
+    </div>
+    <div class="item">
+      <h3>Teacher</h3>
+      <div class="img-cont">
+        <img src="/assets/teacher.jpg" alt="">
+      </div>
+    </div>
+    <div class="item">
+      <h3>Banker</h3>
+      <div class="img-cont">
+        <img src="/assets/banker.jpg" alt="">
+      </div>
+    </div>
+    <div class="item">
+      <h3>Aerospace</h3>
+      <div class="img-cont">
+        <img src="/assets/pilote.jpg" alt="">
+      </div>
+    </div>
+    <div class="item">
+      <h3>Human Resources</h3>
+      <div class="img-cont">
+        <img src="/assets/hr.jpg" alt="">
+      </div>
+    </div>
+
+  </div>
+</section>
 
 
 <div class="jobs-list-bloc">
