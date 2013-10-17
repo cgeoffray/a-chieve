@@ -1,20 +1,31 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>AChieve</title>
-    <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-    <%= csrf_meta_tags %>
-  </head>
-  <body>
-    <%= image_tag "/assets/logo_achieve.png", :size => "200x66" %>
-    <%= link_to "Jobs", jobs_path %>
+<head>
+  <title>AChieve</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
 
-    <!-- Notifications for login/logout -->
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+<body>
 
-    <%= yield %>
+<header>
+  <a id="logo" href="javascript:location.reload(true);document.location='/'">
+    <%= image_tag "/assets/logo_nobckg.png"%>
+  </a>
 
+  <a href="#" id="login">Log in</a>
+  <a href="#" id="signup">Sign up</a>
+
+
+</header>
+<div id="page_block">
+
+
+  <%= yield %>
+
+  <%= link_to "Users", users_path %>
+  <%=# link_to "Jobs", jobs_path %>
+</div>
   </body>
 </html>
