@@ -14,7 +14,12 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree
+//= require bootstrap
 //= require masonry.pkgd.min.js
+
+$(function (){
+        $('.carousel').carousel();
+    });
 
 jQuery(document).ready(function () {
 var container = document.querySelector('#container');
