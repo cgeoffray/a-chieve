@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9d87adfd-51df-401b-b23e-059382233f9f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/application.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/application.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile.lock" afterPath="$PROJECT_DIR$/Gemfile.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/jobs/index.html.erb" afterPath="$PROJECT_DIR$/app/views/jobs/index.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/jobs.css.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/jobs.css.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/jobs/show.html.erb" afterPath="$PROJECT_DIR$/app/views/jobs/show.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/video.rb" afterPath="$PROJECT_DIR$/app/models/video.rb" />
     </list>
     <ignored path="a-chieve.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -47,10 +46,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.html.erb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="index.html.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/jobs/index.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="12" selection-start="297" selection-end="297" vertical-scroll-proportion="-5.625">
+            <state line="23" column="12" selection-start="763" selection-end="763" vertical-scroll-proportion="0.5714286">
               <folding />
             </state>
           </provider>
@@ -65,10 +64,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="jobs.css.scss" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="jobs.css.scss" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/jobs.css.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="85" column="25" selection-start="1435" selection-end="1435" vertical-scroll-proportion="0.3517588">
+            <state line="87" column="42" selection-start="1449" selection-end="1449" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -729,13 +728,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/jobs/index.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="12" selection-start="297" selection-end="297" vertical-scroll-proportion="-5.625">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="8" column="19" selection-start="259" selection-end="259" vertical-scroll-proportion="-5.0">
@@ -780,7 +772,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/jobs.css.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="85" column="25" selection-start="1435" selection-end="1435" vertical-scroll-proportion="0.3517588">
+        <state line="87" column="42" selection-start="1449" selection-end="1449" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/jobs/index.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="12" selection-start="763" selection-end="763" vertical-scroll-proportion="0.5714286">
           <folding />
         </state>
       </provider>
