@@ -31,15 +31,3 @@
 </section>
 
 
-<div class="jobs-list-bloc">
-  <% @jobs.each do |job| %>
-    <% if !job.videos.first.nil? %>
-    <div class="job-bloc">
-      <h4><%= link_to job.title, job %></h4>
-      <%= link_to "Show "+job.title+" page", job %><br/>
-      <iframe width="420" height="315" src="<%= job.videos.first.embed_url %>" frameborder="0" allowfullscreen></iframe><br/>
-    </div>
-    <% end %>
-  <% end %>
-</div>
-<br>
