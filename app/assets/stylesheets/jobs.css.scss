@@ -83,6 +83,14 @@
     width: 314px;
     height: 225px;
     overflow: hidden;
+    border: 1px solid gray;
+
+    .item{
+      border: none;
+      width: 314px;
+      margin-left: -1px;
+      margin-top: 1px;
+    }
   }
   p{
     display: inline-block;
