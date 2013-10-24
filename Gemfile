@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+# RVM gemset
+#ruby-gemset=feetme
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0.rc1'
 ruby "2.0.0"
@@ -12,6 +15,9 @@ end
 group :development, :test do
   gem 'sqlite3'
 end
+
+# Use Devise as an authentication system
+gem 'devise'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0.rc1'

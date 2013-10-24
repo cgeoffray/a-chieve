@@ -1,11 +1,11 @@
 AChieve::Application.routes.draw do
+  
+  devise_for :users
 
   resources :videos, :only => [:destroy, :show, :edit, :update]
   resources :jobs do
     resources :videos, :only => [:create, :index, :new]
   end
-
-  resources :users
 
   root :to => "jobs#index"
 
