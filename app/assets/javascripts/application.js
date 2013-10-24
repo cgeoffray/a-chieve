@@ -18,7 +18,9 @@
 //= require masonry.pkgd.min.js
 
 $(function (){
-        $('.carousel').carousel();
+        $('.carousel').carousel({
+            interval:5000
+        });
     });
 
 jQuery(document).ready(function () {
