@@ -11,15 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131029031035) do
-
-  create_table "categories", force: true do |t|
-    t.string   "name"
-    t.text     "description"
-    t.integer  "video_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+ActiveRecord::Schema.define(version: 20131011002504) do
 
   create_table "jobs", force: true do |t|
     t.string   "title"
@@ -27,7 +19,6 @@ ActiveRecord::Schema.define(version: 20131029031035) do
     t.text     "education"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "category_id"
   end
 
   create_table "users", force: true do |t|
