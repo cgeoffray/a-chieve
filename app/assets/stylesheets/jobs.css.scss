@@ -45,7 +45,7 @@
   a{
     &:hover{
       color: black;
-      background-color: white;
+      background: none;
     }
   }
 }
@@ -126,4 +126,9 @@
   padding-top: 15px;
   padding-bottom: 15px;
   border-bottom: darkgrey 2px solid;
+}
+
+.btn-medium{
+  width: 100px;
+  display:block; margin-left: auto; margin-right: auto;
 }
