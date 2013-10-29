@@ -18,13 +18,26 @@
     <a href="#">About us</a>
     <a href="#">Events</a>
     <% if user_signed_in? %>
-      <%= link_to "Login", new_user_session_path, class: :link %>
+      <%= link_to "Profile", "#", class: :link %>
       <%= link_to "Logout", destroy_user_session_path, class: :link, method: :delete %>
     <% else %>
-      <%= link_to "Login", new_user_session_path, class: :link %>
+      <div class="dropdown">
+        <%= link_to "Login", "#" , :class => "link dropdown-toggle", :"data-toggle" => "dropdown" %>
+        <div class="dropdown-menu">
+          <%= form_for("user", :url => user_session_path) do |f| %>
+            <%= f.label :email %>
+            <%= f.text_field :email %>
+            <%= f.label :password %>
+            <%= f.password_field :password %>
+            <%= f.check_box :remember_me %>
+            <%= f.label :remember_me %>
+            <%= f.submit 'Sign in' %>
+            <%= link_to "Forgot your password?", new_password_path('user') %>
+          <% end %>
+        </div>
+      </div>
       <%= link_to "Sign Up", new_user_registration_path, class: :link %>
     <% end %>
-
 
     </header>
     <div id="page_block">
