@@ -4,10 +4,10 @@ AChieve::Application.routes.draw do
 
   resources :videos, :only => [:destroy, :show, :edit, :update]
   resources :jobs do
-    resources :videos, :only => [:create, :index, :new]
+    resources :videos, :only => [:create, :index, :new, :home_page]
   end
 
-  root :to => "jobs#index"
+  root :to => "jobs#home_page"
 
   post "/" => "jobs#index"
 

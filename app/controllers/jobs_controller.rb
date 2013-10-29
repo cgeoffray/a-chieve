@@ -14,6 +14,16 @@ class JobsController < ApplicationController
     end
   end
 
+  def home_page
+    if params["search"].nil? or params["search"]==""
+      @jobs = Job.includes(:videos).all
+      @search = ""
+    else
+      @jobs = Job.includes(:videos).where("title LIKE ?", params["search"])
+      @search = params["search"]
+    end
+  end
+
   def admin
     if params["search"].nil? or params["search"]==""
       @jobs = Job.includes(:videos).all
@@ -89,3 +99,4 @@ class JobsController < ApplicationController
       params.require(:job).permit(:title, :description, :education)
     end
 end
+

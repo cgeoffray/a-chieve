@@ -42,7 +42,12 @@
   h2{padding-top:25px;
     padding-bottom: 25px;
   }
-
+  a{
+    &:hover{
+      color: black;
+      background: none;
+    }
+  }
 }
 
 .item{
@@ -121,4 +126,9 @@
   padding-top: 15px;
   padding-bottom: 15px;
   border-bottom: darkgrey 2px solid;
+}
+
+.btn-medium{
+  width: 100px;
+  display:block; margin-left: auto; margin-right: auto;
 }
