@@ -1,6 +1,13 @@
 <h1>Editing job</h1>
 
+<% if !@job.level.nil? or @job.level != 0 %>
+Belongs to <%= link_to @job.category.title, @job.category %> category <br/>
+<% end %>
+
 <%= render 'form' %>
+
+<%= link_to 'Show', @job %> |
+<%= link_to 'Back', jobs_path %>
 
 <h3>Videos:</h3>
 <% @job.videos.each do |video| %>
@@ -13,7 +20,11 @@
 </div>
 <% end %>
 
-<%= link_to 'New video', new_job_video_path(@job) %>
+<%= link_to 'New video', new_job_video_path(@job) %> <br/><br/>
 
-<%= link_to 'Show', @job %> |
-<%= link_to 'Back', jobs_path %>
+<h3>Jobs in this category:</h3>
+<% @job.jobs.each do |job| %>
+<%= job.title %> - <%= link_to 'Show', job %> | <%= link_to 'Edit', edit_job_path(job) %><br/>
+<% end %>
+<br/>
+<%= link_to 'Add A New Job To This Category', job_new_job_path(@job) %>

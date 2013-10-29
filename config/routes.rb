@@ -5,6 +5,7 @@ AChieve::Application.routes.draw do
   resources :videos, :only => [:destroy, :show, :edit, :update]
   resources :jobs do
     resources :videos, :only => [:create, :index, :new, :home_page]
+    get "/new_job" => "jobs#new"
   end
 
   root :to => "jobs#home_page"

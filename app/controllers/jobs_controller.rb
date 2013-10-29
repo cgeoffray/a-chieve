@@ -42,6 +42,13 @@ class JobsController < ApplicationController
   # GET /jobs/new
   def new
     @job = Job.new
+    if params["job_id"].nil?
+      @job.level = 0
+    else
+      @category = Job.find(params["job_id"])
+      @job.level = @category.level + 1
+      @job.category = @category
+    end
   end
 
   # GET /jobs/1/edit
@@ -96,7 +103,7 @@ class JobsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def job_params
-      params.require(:job).permit(:title, :description, :education)
+      params.require(:job).permit(:title, :description, :education, :level, :category, :category_id)
     end
 end
 
