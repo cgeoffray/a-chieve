@@ -1,32 +1,37 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>AChieve</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
-</head>
+  <head>
+    <title>AChieve</title>
+    <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= csrf_meta_tags %>
+  </head>
 
-<body>
+  <body>
 
-<header>
-  <a id="logo" href="javascript:location.reload(true);document.location='/'">
-    <%= image_tag "/assets/logo_nobckg.png"%>
-  </a>
+    <header>
+    <a id="logo" href="javascript:location.reload(true);document.location='/'">
+      <%= image_tag "/assets/logo_nobckg.png"%>
+    </a>
 
-  <a href="javascript:location.reload(true);document.location='/'">Careers</a>
-  <a href="#">About us</a>
-  <a href="#">Events</a>
-  <a href=<%= new_user_session_path %> id="login">Log in</a>
-  <a href=<%= new_user_registration_path %> id="signup">Sign up</a>
+    <a href="javascript:location.reload(true);document.location='/'">Careers</a>
+    <a href="#">About us</a>
+    <a href="#">Events</a>
+    <% if user_signed_in? %>
+      <%= link_to "Login", new_user_session_path, class: :link %>
+      <%= link_to "Logout", destroy_user_session_path, class: :link, method: :delete %>
+    <% else %>
+      <%= link_to "Login", new_user_session_path, class: :link %>
+      <%= link_to "Sign Up", new_user_registration_path, class: :link %>
+    <% end %>
 
 
-</header>
-<div id="page_block">
+    </header>
+    <div id="page_block">
 
 
-  <%= yield %>
+      <%= yield %>
 
-</div>
+    </div>
   </body>
 </html>
