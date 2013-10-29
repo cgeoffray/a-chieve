@@ -89,3 +89,7 @@ class JobsController < ApplicationController
       params.require(:job).permit(:title, :description, :education)
     end
 end
+
+def home_page
+
+end
