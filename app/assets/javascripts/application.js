@@ -12,10 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.ui.widget.min.js
 //= require turbolinks
-//= require_tree
 //= require bootstrap
 //= require masonry.pkgd.min.js
+//= require_tree
 
 $(function (){
         $('.carousel').carousel({
@@ -32,3 +33,15 @@ var msnry = new Masonry( container, {
 });
 
 })
+
+$(document).ready(function() {
+	var availableTags = [
+      "test",
+      "autocomplete"
+    ];
+    $("#tagsBox").tagit().autocomplete({
+    	delay: 0,
+    	minLength: 2,
+		source: availableTags
+	});
+});

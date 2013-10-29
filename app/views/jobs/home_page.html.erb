@@ -1,0 +1,37 @@
+<img src="/assets/Header_shadow6.png" alt="" style="display:block; margin-left: auto; margin-right: auto; width:100%;">
+
+<section id="explore">
+
+  <div id="home-banner">
+
+    <h2>
+      What kind of job are you <span>interested in ?</span><br>
+      <p> Explore our database of career paths</p>
+    </h2>
+  </div>
+
+  <div id="categories">
+
+    <div id="container" class="js-masonry"
+         data-masonry-options='{ "columnWidth": 333, "itemSelector": ".item" }'>
+      <% @jobs.first(3).each do |job| %>
+          <% if !job.videos.first.nil? %>
+              <div class="item">
+                <h4><%= link_to job.title, job %></h4>
+                <div class="img-cont">
+                  <iframe width="314" height="187" src="<%= job.videos.first.embed_url %>" frameborder="0" allowfullscreen></iframe><br/>
+                </div>
+              </div>
+          <% end %>
+      <% end %>
+    </div>
+    <a href="javascript:location.reload(true);document.location='/jobs'" class="btn btn-primary btn-lg btn-block">
+      See more...
+    </a>
+  </div>
+
+</section>
+
+
+
+
