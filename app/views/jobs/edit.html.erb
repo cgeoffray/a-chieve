@@ -1,6 +1,6 @@
 <h1>Editing job</h1>
 
-<% if !@job.level.nil? or @job.level != 0 %>
+<% if !@job.level.nil? and @job.level != 0 %>
 Belongs to <%= link_to @job.category.title, @job.category %> category <br/>
 <% end %>
 
