@@ -70,6 +70,46 @@ footer{
 }
 
 
+.dropdown-menu{
+  background: rgba(250,250,255,0.95);
+  padding: 10px;
+  border-radius: 0px;
+  margin-top: 20px;
+
+  form{
+    margin: 0;
+  }
+  .inputs{
+    background: white;
+    &:focus{
+      background: white;
+    }
+    &:-webkit-autofill{
+      background: white !important;
+    }
+  }
+
+  .texts{
+    color: rgb(30,30,30);
+  }
+  #remember_me{
+    float: left;
+    margin-right: 15px;
+  }
+
+  a{
+    font-size: 12px;
+    margin-left: 92px;
+    color: rgb(30,30,30);
+  }
+  .btn{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+    background: rgb(71,176,236);
+  }
+}
 
 
 

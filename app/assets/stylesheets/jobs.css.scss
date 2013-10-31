@@ -133,6 +133,12 @@
   display:block; margin-left: auto; margin-right: auto;
 }
 
+#home-img{
+  height: 300px;
+  overflow: hidden;
+  background: url("/assets/Header_shadow6.png") no-repeat center;
+  background-size: cover
+}
 
 #home-banner{
   height: 145px;
