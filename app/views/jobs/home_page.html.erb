@@ -14,6 +14,9 @@
 
   <div id="categories">
 
+    <img src="/assets/down.png" alt="dn" style="width: 50px;
+            display: block;margin-left: auto; margin-right: auto; margin-bottom: 5px;">
+
     <div id="container" class="js-masonry"
          data-masonry-options='{ "columnWidth": 333, "itemSelector": ".item" }'>
       <% @jobs.first(3).each do |job| %>
@@ -27,7 +30,7 @@
           <% end %>
       <% end %>
     </div>
-    <a href="javascript:location.reload(true);document.location='/jobs'" class="btn btn-primary btn-lg btn-block">
+    <a href="javascript:location.reload(true);document.location='/jobs'" class="btn btn-primary">
       See more...
     </a>
   </div>
