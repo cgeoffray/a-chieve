@@ -4,7 +4,7 @@
   </h2>
 
   <form action="/" method="POST">
-    <input name="search" type="text" placeholder="Architect, James Bond, etc." value="<%= @search %>"/>
+    <input name="search" type="text" placeholder="Architect, James Bond, etc." value="<%= @search %>" id="searchbar"/>
     <input type="submit" class="btn btn-small btn-primary"/>
   </form>
 </section>
@@ -15,13 +15,18 @@
   <div id="container" class="js-masonry"
        data-masonry-options='{ "columnWidth": 333, "itemSelector": ".item" }'>
     <% @jobs.each do |job| %>
+        <% if job.level=0 %>
         <% if !job.videos.first.nil? %>
             <div class="item">
               <h4><%= link_to job.title, job %></h4>
               <div class="img-cont">
                 <iframe width="314" height="187" src="<%= job.videos.first.embed_url %>" frameborder="0" allowfullscreen></iframe><br/>
               </div>
+              <% if !current_user.nil? && current_user.watched(job.id) %>
+                  <img src="assets/check.png" alt="" style="  top: -20px; position: relative; left: 285px; height: 15%;  ">
+              <% end %>
             </div>
+        <% end %>
         <% end %>
     <% end %>
 

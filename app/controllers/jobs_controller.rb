@@ -37,7 +37,7 @@ class JobsController < ApplicationController
   # GET /jobs/1
   # GET /jobs/1.json
   def show
-    if !current_user.watched(params[:id])
+    if (!current_user.nil? && !current_user.watched(params[:id]))
       current_user.watched_jobs.create(job_id: params[:id])
       current_user.points += 10
     end
