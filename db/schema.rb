@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131108041012) do
+ActiveRecord::Schema.define(version: 20131108073005) do
 
   create_table "jobs", force: true do |t|
     t.string   "title"
@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(version: 20131108041012) do
     t.string   "first_name"
     t.string   "last_name"
     t.string   "profile_name"
-    t.integer  "points"
+    t.integer  "points",                 default: 0
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
