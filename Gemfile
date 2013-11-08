@@ -8,10 +8,6 @@ gem 'rails', '4.0.0.rc1'
 ruby "2.0.0"
 
 # Use sqlite3 as the database for Active Record
-group :production do
-  gem 'pg'
-end        
-
 group :development, :test do
   gem 'sqlite3'
 end
@@ -61,6 +57,9 @@ gem 'twitter-bootstrap-rails'
 gem 'bootstrap-sass'
 
 # heroku
-gem 'rails_12factor', group: :production
+group :production do
+  gem 'rails_12factor'
+  gem 'pg'
+end
 
 gem 'acts-as-taggable-on'
