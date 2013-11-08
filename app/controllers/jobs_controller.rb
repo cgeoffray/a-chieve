@@ -37,6 +37,9 @@ class JobsController < ApplicationController
   # GET /jobs/1
   # GET /jobs/1.json
   def show
+    if !current_user.watched(params[:id])
+      current_user.watched_jobs.create(job_id: params[:id])
+    end
   end
 
   # GET /jobs/new
