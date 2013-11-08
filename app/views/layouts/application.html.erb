@@ -18,7 +18,7 @@
     <a href="#">About us</a>
     <a href="#">Events</a>
     <% if user_signed_in? %>
-      <%= link_to "Profile", "#", class: :link %>
+      <%= link_to "Profile", current_user, class: :link %>
       <%= link_to "Logout", destroy_user_session_path, class: :link, method: :delete %>
     <% else %>
       <div class="dropdown">

@@ -1,0 +1,9 @@
+<h1><%= @user.profile_name %></h1>
+<%= @user.first_name %>
+<%= @user.last_name %>
+<%= @user.profile_name %>
+<%= @user.email %>
+<%= @user.points %>
+<% if  @user.role == 0 %>
+  Congratz, you're an admin.
+<% end %>

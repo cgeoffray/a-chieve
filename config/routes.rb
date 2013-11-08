@@ -1,6 +1,7 @@
 AChieve::Application.routes.draw do
   
   devise_for :users
+  resources :users, only: [:show]
 
   resources :videos, :only => [:destroy, :show, :edit, :update]
   resources :jobs do
