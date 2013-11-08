@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131029075331) do
+ActiveRecord::Schema.define(version: 20131108041012) do
 
   create_table "jobs", force: true do |t|
     t.string   "title"
@@ -73,6 +73,13 @@ ActiveRecord::Schema.define(version: 20131029075331) do
     t.string   "title"
     t.text     "description"
     t.text     "video_url"
+    t.integer  "job_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "watched_jobs", force: true do |t|
+    t.integer  "user_id"
     t.integer  "job_id"
     t.datetime "created_at"
     t.datetime "updated_at"

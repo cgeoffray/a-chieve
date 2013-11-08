@@ -23,9 +23,11 @@
           <% if !job.videos.first.nil? %>
               <div class="item">
                 <h4><%= link_to job.title, job %></h4>
+                 <% if !current_user.nil? && !current_user.watched(job.id) %>
                 <div class="img-cont">
                   <iframe width="314" height="187" src="<%= job.videos.first.embed_url %>" frameborder="0" allowfullscreen></iframe><br/>
                 </div>
+              <% end %>
               </div>
           <% end %>
       <% end %>
