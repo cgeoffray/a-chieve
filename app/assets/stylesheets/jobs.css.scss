@@ -73,11 +73,10 @@
 .item{
   width: 320px;
   height: 240px;
-  background: white;
+  background: rgba(255,255,255,0.5);
   overflow: hidden;
   margin-left: 6.5px;
   margin-bottom: 12px;
-  border: darkgrey 1px solid;
 
   .img-cont{
     margin-left: 3px;
@@ -229,11 +228,18 @@
   padding-right: 47px;
   padding-top: 5px;
   padding-bottom: 35px;
-  height: 200px;
 
   h2{
     padding-top: 0;
     color: rgb(15,15,30);
+  }
+
+  .item{
+    img{
+      height: 100%;
+      width: 100%;
+      margin: 0;
+    }
   }
 }
 #achieve{
