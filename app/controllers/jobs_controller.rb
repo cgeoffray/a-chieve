@@ -39,7 +39,7 @@ class JobsController < ApplicationController
   def show
     if (!current_user.nil? && !current_user.watched(params[:id]))
       current_user.watched_jobs.create(job_id: params[:id])
-      current_user.points += 10
+      current_user.points += 100
       current_user.save
     end
   end
