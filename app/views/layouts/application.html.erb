@@ -22,7 +22,7 @@
       <%= link_to "Logout", destroy_user_session_path, class: :link, method: :delete %>
     <% else %>
       <div class="dropdown">
-        <%= link_to "Login", "#" , :class => "link dropdown-toggle", :"data-toggle" => "dropdown" %>
+        <%= link_to "Sign in", "#" , :class => "link dropdown-toggle", :"data-toggle" => "dropdown" %>
         <div class="dropdown-menu">
           <%= form_for("user", :url => user_session_path) do |f| %>
             <%= f.label :email, :class => "texts"%>
@@ -33,10 +33,10 @@
               <%= f.check_box :remember_me, :id => "remember_me" %>
               <%= f.label :remember_me, :class => "texts"   %>
             <%= f.submit 'Sign in', :class => "btn btn-primary" %>
+            <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-primary" %>
           <% end %>
         </div>
       </div>
-      <%= link_to "Sign Up", new_user_registration_path, class: :link %>
     <% end %>
 
     </header>
