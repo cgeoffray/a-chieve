@@ -63,13 +63,21 @@ header{
     font-size: 12px;
     margin-left: 92px;
     color: rgb(30,30,30);
+    &:hover{
+      color:black;
+      text-decoration: underline;
+    }
   }
-  .btn{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 70%;
+  .btn-primary{
+    display: inline-block;
+    width: 60%;
     background: rgb(71,176,236);
+  }
+  .btn-default{
+    display: inline-block;
+    width: 20%;
+    margin: 0;
+    margin-left: 5px;
   }
 }
 
@@ -111,7 +119,7 @@ footer{
 
   #social{
     margin-top: 15px;
-    img{ height: 30px; }
+    img{ height: 20px; }
 
     a{
       border: none;
