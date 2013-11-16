@@ -165,20 +165,21 @@
 }
 
 #home-img{
-  height: 300px;
+  height: 320px;
   overflow: hidden;
   background: url("/assets/Header_shadow6.png") no-repeat center;
   background-size: cover
 }
 
 #home-banner{
-  height: 95px;
+  height: 255px;
   background-color: rgb(40,180,100);
 
   h2{
     color: white;
     font-size: 45px;
     font-weight: lighter;
+    padding-top: 20px;
 
     span{
       font-style: italic;
@@ -191,6 +192,20 @@
       font-size: 30px;
     }
   }
+  .nav-icons{
+    height: 100px;
+    display: inline-block;
+    margin-left: 190px;
+    margin-bottom: 5px;
+    margin-top: 10px;
+  }
+  h3{
+    display: inline-block;
+    width: 206px;
+    padding-left: 125px;
+    font-size: 22.5px;
+    color: black;
+  }
 }
 
 #categories{
@@ -201,7 +216,7 @@
   padding-bottom: 35px;
 
   h2{
-    padding-top: 0;
+    padding-top: 12px;
     color: rgb(25,10,10);
   }
 
@@ -230,7 +245,7 @@
   padding-bottom: 35px;
 
   h2{
-    padding-top: 0;
+    padding-top: 12px;
     color: rgb(15,15,30);
   }
 
@@ -251,7 +266,7 @@
   height: 200px;
 
   h2{
-    padding-top: 0;
+    padding-top: 12px;
     color: rgb(25,20,15);
   }
 }

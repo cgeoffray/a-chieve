@@ -29,11 +29,11 @@
             <%= f.text_field :email, :class => "inputs" %>
             <%= f.label :password, :class => "texts" %>
             <%= f.password_field :password, :class => "inputs" %>
-            <%= link_to "Forgot your password?", new_password_path('user') %><br><br>
+            <%= link_to "Forgot your password?", new_password_path('user') %><br>
               <%= f.check_box :remember_me, :id => "remember_me" %>
               <%= f.label :remember_me, :class => "texts"   %>
             <%= f.submit 'Sign in', :class => "btn btn-primary" %>
-            <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-primary" %>
+            <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-default" %>
           <% end %>
         </div>
       </div>
