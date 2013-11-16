@@ -8,12 +8,20 @@
     <h2>
       What kind of job are you <span>interested in ?</span>
     </h2>
-    <input src="/assets/suitcase.png" alt="careers" class="nav-icons" type="image" onclick="document.getElementById('categories').scrollIntoView();"/>
-    <input src="/assets/hero.png" alt="careers" class="nav-icons" type="image" onclick="document.getElementById('inspiration').scrollIntoView();"/>
-    <input src="/assets/calendar.png" alt="careers" class="nav-icons" type="image" onclick="document.getElementById('achieve').scrollIntoView();"/>
-    <h3>Career Information</h3>
-    <h3>Inspiring People</h3>
-    <h3>A-chieve Events</h3>
+    <div class="nav-btn">
+      <input src="/assets/suitcase.png" alt="careers" class="nav-icons" type="image" onclick="document.getElementById('inspiration').scrollIntoView();"/>
+      <h3>Career Information</h3>
+    </div>
+
+    <div class="nav-btn">
+      <input src="/assets/hero.png" alt="careers" class="nav-icons" type="image" onclick="document.getElementById('categories').scrollIntoView();"/>
+      <h3>Inspiring People</h3>
+    </div>
+
+    <div class="nav-btn">
+      <input src="/assets/calendar.png" alt="careers" class="nav-icons" type="image" onclick="document.getElementById('achieve').scrollIntoView();"/>
+      <h3>A-chieve Events</h3>
+    </div>
   </div>
 
 <!--  <div id="nav-bar">
@@ -63,7 +71,9 @@
         <img src="assets/success.png" alt="">
       </div>
     </div>
-
+    <a href="javascript:location.reload(true);document.location='/jobs'" class="btn btn-primary">
+      See more...
+    </a>
   </div>
 
   <div id="achieve">

@@ -1,3 +1,31 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#avatar{
+
+  margin: 20px;
+  height: 300px;
+  width: 250px;
+  background: rgb(245,243,188);
+  display: inline-block;
+
+  img{
+    position: block;
+    margin-left: auto;
+    margin-right: auto;
+    vertical-align: middle;
+    height: 100%;
+    width: auto;
+  }
+}
+
+h1{
+  padding: 20px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+#personal{
+  h2{text-align: left;}
+}

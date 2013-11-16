@@ -1,9 +1,20 @@
+<div id="avatar">
+  <img src="/assets/gingerbread.png" alt="">
+</div>
+
 <h1><%= @user.profile_name %></h1>
-<%= @user.first_name %>
-<%= @user.last_name %>
-<%= @user.profile_name %>
-<%= @user.email %>
+
+
 <%= @user.points %>
+<section id="personal">
+  <h2>
+    Personal information
+  </h2>
+  <%= @user.first_name %>
+  <%= @user.last_name %>
+  <%= @user.profile_name %>
+  <%= @user.email %>
+</section>
 <% if  @user.role == 0 %>
   Congratz, you're an admin.
 <% end %>
