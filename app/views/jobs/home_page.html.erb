@@ -26,7 +26,7 @@
 
     <h2> Explore our database of career paths</h2>
     <div id="container" class="js-masonry"
-         data-masonry-options='{ "columnWidth": 333, "itemSelector": ".item" }'>
+      data-masonry-options='{ "columnWidth": 333, "itemSelector": ".item" }'>
       <% @jobs.first(3).each do |job| %>
           <% if !job.videos.first.nil? %>
               <div class="item">

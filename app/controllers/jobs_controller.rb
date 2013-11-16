@@ -6,7 +6,7 @@ class JobsController < ApplicationController
   # GET /jobs.json
   def index
     if params["search"].nil? or params["search"]==""
-      @jobs = Job.includes(:videos).all
+      @jobs = Job.where(level: 0).includes(:videos).all
       @search = ""
     else
       @jobs = Job.includes(:videos).where("title LIKE ?", params["search"])
@@ -42,6 +42,7 @@ class JobsController < ApplicationController
       current_user.points += 100
       current_user.save
     end
+    @subcategories = Job.find(params[:id]).jobs
   end
 
   # GET /jobs/new
