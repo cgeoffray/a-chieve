@@ -6,7 +6,7 @@ class JobsController < ApplicationController
   # GET /jobs.json
   def index
     if params["search"].nil? or params["search"]==""
-      @jobs = Job.where(level: 0).includes(:videos).all
+      @jobs = Job.includes(:videos).where(level: 0)
       @search = ""
     else
       @jobs = Job.includes(:videos).where("title LIKE ?", params["search"])
@@ -16,7 +16,7 @@ class JobsController < ApplicationController
 
   def home_page
     if params["search"].nil? or params["search"]==""
-      @jobs = Job.includes(:videos).all
+      @jobs = Job.includes(:videos).where(level: 0)
       @search = ""
     else
       @jobs = Job.includes(:videos).where("title LIKE ?", params["search"])

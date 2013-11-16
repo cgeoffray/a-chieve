@@ -15,7 +15,6 @@
   <div id="container" class="js-masonry"
        data-masonry-options='{ "columnWidth": 333, "itemSelector": ".item" }'>
     <% @jobs.each do |job| %>
-        <% if job.level=0 %>
         <% if !job.videos.first.nil? %>
             <div class="item">
               <h4><%= link_to job.title, job %></h4>
@@ -26,7 +25,6 @@
                   <img src="assets/check.png" alt="" style="  top: -20px; position: relative; left: 285px; height: 15%;  ">
               <% end %>
             </div>
-        <% end %>
         <% end %>
     <% end %>
 
