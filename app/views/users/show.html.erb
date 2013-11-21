@@ -4,8 +4,12 @@
 
 <h1><%= @user.profile_name %></h1>
 
-
-<%= @user.points %>
+<aside>
+  <div id="top"><h2>My Score</h2></div>
+  <div id="down">
+    <%= @user.points %>
+  </div>
+</aside>
 <section id="personal">
   <h2>
     Personal information
