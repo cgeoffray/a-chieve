@@ -16,6 +16,9 @@ AChieve::Application.routes.draw do
   get "/admin" => "jobs#admin"
   post "/admin" => "jobs#admin"
 
+  get "/about_us" => "jobs#about_us"
+  get "/partners" => "jobs#partners"
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

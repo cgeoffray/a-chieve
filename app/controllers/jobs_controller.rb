@@ -24,6 +24,14 @@ class JobsController < ApplicationController
     end
   end
 
+  def about_us
+
+  end
+
+  def partners
+
+  end
+
   def admin
     if params["search"].nil? or params["search"]==""
       @jobs = Job.includes(:videos).all
