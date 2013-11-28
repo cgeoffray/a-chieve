@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131128031441) do
+ActiveRecord::Schema.define(version: 20131128084245) do
 
   create_table "jobs", force: true do |t|
     t.string   "title"
@@ -25,20 +25,6 @@ ActiveRecord::Schema.define(version: 20131128031441) do
 
   create_table "roles", force: true do |t|
     t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "success_card_additional_trainings", force: true do |t|
-    t.integer  "success_card_id"
-    t.string   "training"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "success_card_awards", force: true do |t|
-    t.integer  "success_card_id"
-    t.string   "award"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -59,6 +45,8 @@ ActiveRecord::Schema.define(version: 20131128031441) do
     t.datetime "picture_updated_at"
     t.integer  "job_id"
     t.string   "name"
+    t.text     "additional_training"
+    t.text     "awards"
   end
 
   create_table "taggings", force: true do |t|

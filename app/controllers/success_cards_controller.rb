@@ -34,7 +34,7 @@ class SuccessCardsController < ApplicationController
 
   private
     def success_card_params
-      params.require(:success_card).permit(:name, :job_title, :income, :schooling, :skills, :fun_fact, :challenges, :find_out_more, :picture, :job_id)
+      params.require(:success_card).permit(:name, :job_title, :income, :schooling, :additional_training, :awards, :skills, :fun_fact, :challenges, :find_out_more, :picture, :job_id)
     end
 
 end
