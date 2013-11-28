@@ -16,7 +16,7 @@
 
     <a href="javascript:location.reload(true);document.location='/jobs'">Careers</a>
     <a href="#">Inspiration</a>
-    <a href="#">Events</a>
+    <a href="javascript:location.reload(true);document.location='/events'">Events</a>
     <% if user_signed_in? %>
       <%= link_to "Profile", current_user, class: :link %>
       <%= link_to "Logout", destroy_user_session_path, class: :link, method: :delete %>
