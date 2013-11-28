@@ -18,6 +18,8 @@ AChieve::Application.routes.draw do
 
   get "/about_us" => "jobs#about_us"
   get "/partners" => "jobs#partners"
+  
+  get "/events" => "jobs#events"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
