@@ -62,4 +62,9 @@ group :production do
   gem 'pg'
 end
 
+# For image storage
+gem 'paperclip'
+gem 'aws-sdk'
+gem 'figaro'
+
 gem 'acts-as-taggable-on'
