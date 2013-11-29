@@ -28,7 +28,7 @@ Belongs to <%= link_to @job.category.title, @job.category %> category <br/>
 	<% if !sc.picture.nil? %>
     <%= image_tag sc.picture.url(:square) %><br/>
 	<% end %>
-	<%= sc.name %> - <%= link_to 'Destroy', sc, method: :delete, data: { confirm: 'Are you sure?' } %><br/>
+  <%= sc.name %> - <%= link_to 'Edit', edit_success_card_path(sc) %> -  <%= link_to 'Destroy', sc, method: :delete, data: { confirm: 'Are you sure?' } %><br/>
 </div>
 <% end %>
 
