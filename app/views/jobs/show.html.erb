@@ -2,77 +2,87 @@
 
 
 <section id="description">
-  <div class="job-container">
+<div class="job-container">
 
-    <h2 class="title">
-      <%= @job.title %>
-    </h2>
-    <div class="img-cont">
-      <div id="MyCarousel" class="carousel slide">
-        <div class="carousel-inner">
-          <div class="item active">
-            <% if !@job.success_cards.first.nil? %>
-              <%= image_tag @job.success_cards.first.picture.url(:square) %> 
-            <% else %>
-              <img src="/assets/success.png" alt="">
-            <% end %>
-          </div>
-          <div class="item">
-            <img src="/assets/success.png" alt="">
-          </div>
-          <div class="item">
-            <img src="/assets/success.png" alt="">
-          </div>
-        </div>
-      </div>
-      <!--<img src="/assets/success.png" alt=""> -->
-    </div>
-    <p>
-    <strong>Description:</strong>
-    <%= @job.description %>
-    <br> <br>
-    <strong>Education:</strong>
-    <%= @job.education %>
-    </p>
-  </div>
-  </section>
-
-  <section id="videos">
-  <div class="job-container">
-
-    <% @job.videos.each do |video| %>
-      <% if !video.video_url.nil? %>
-        <div>
-          <iframe width="530" height="315" src="<%= video.embed_url %>" frameborder="0" allowfullscreen class="job-video"></iframe>
-          <p>
-          <span><%= video.title %></span>
-          <br> <br>
-          <%= video.description %>
-          </p>
-        </div>
-      <% end %>
-      <br>
-    <% end %>
-  </div>
-  </section>
-  <section id="subcategories">
-  <div class="job-container">
-    <h2>Jobs in this category</h2>
-    <% @subcategories.each do |subcategory| %>
-      <% if !subcategory.videos.first.nil? %>
-        <div class="item">
-          <h4><%= link_to subcategory.title, subcategory %></h4>
-          <div class="img-cont">
-            <iframe width="314" height="187" src="<%= subcategory.videos.first.embed_url %>" frameborder="0" allowfullscreen></iframe><br/>
-          </div>
-          <% if !current_user.nil? && current_user.watched(job.id) %>
-            <img src="assets/check.png" alt="" style="  top: -20px; position: relative; left: 285px; height: 15%;  ">
+  <h2 class="title">
+    <%= @job.title %>
+  </h2>
+  <div class="img-cont">
+    <div id="MyCarousel" class="carousel slide">
+      <div class="carousel-inner">
+        <% if !@success_cards.empty? %>
+          <% @success_cards.each_with_index do |sc, index| %>
+            <div class="item<% if index == 0 %> active<% end %>">
+              <%= image_tag sc.picture.url(:square) %> 
+            </div>
+            <div class="item">
+              <b>Name : </b><%= sc.name %></br>
+              <b>Job Title : </b><%= sc.job_title %></br>
+              <b>Income : </b><%= sc.income %></br>
+              <b>Schooling : </b><%= sc.schooling %></br>
+              <b>Additional Training : </b><%= sc.additional_training %></br>
+              <b>Skills : </b><%= sc.skills %></br>
+              <b>Awards : </b><%= sc.awards %></br>
+              <b>Fun Fact : </b><%= sc.fun_fact %></br>
+              <b>Challenges : </b><%= sc.challenges %></br>
+              <b>Find out more : </b><%= sc.find_out_more %></br>
+            </div>
           <% end %>
-        </div>
-      <% end %>
-    <% end %>
+        <% else %>
+          <div class="item active">
+            <img src="/assets/success.png" alt="">
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <!--<img src="/assets/success.png" alt=""> -->
   </div>
-  </section>
+  <p>
+  <strong>Description:</strong>
+  <%= @job.description %>
+  <br> <br>
+  <strong>Education:</strong>
+  <%= @job.education %>
+  </p>
+</div>
+</section>
 
-  <!--<%= link_to 'Edit', edit_job_path(@job) %>
-  <%= link_to 'Back', jobs_path %>   -->
+<section id="videos">
+<div class="job-container">
+
+  <% @job.videos.each do |video| %>
+    <% if !video.video_url.nil? %>
+      <div>
+        <iframe width="530" height="315" src="<%= video.embed_url %>" frameborder="0" allowfullscreen class="job-video"></iframe>
+        <p>
+        <span><%= video.title %></span>
+        <br> <br>
+        <%= video.description %>
+        </p>
+      </div>
+    <% end %>
+    <br>
+  <% end %>
+</div>
+</section>
+<section id="subcategories">
+<div class="job-container">
+  <h2>Jobs in this category</h2>
+  <% @subcategories.each do |subcategory| %>
+    <% if !subcategory.videos.first.nil? %>
+      <div class="item">
+        <h4><%= link_to subcategory.title, subcategory %></h4>
+        <div class="img-cont">
+          <iframe width="314" height="187" src="<%= subcategory.videos.first.embed_url %>" frameborder="0" allowfullscreen></iframe><br/>
+        </div>
+        <% if !current_user.nil? && current_user.watched(job.id) %>
+          <img src="assets/check.png" alt="" style="  top: -20px; position: relative; left: 285px; height: 15%;  ">
+        <% end %>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+</section>
+
+<!--<%= link_to 'Edit', edit_job_path(@job) %>
+<%= link_to 'Back', jobs_path %>   -->

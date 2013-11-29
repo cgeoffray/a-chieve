@@ -50,7 +50,9 @@ class JobsController < ApplicationController
       current_user.points += 100
       current_user.save
     end
-    @subcategories = Job.find(params[:id]).jobs
+    @job = Job.find(params[:id])
+    @subcategories = @job.jobs
+    @success_cards = @job.success_cards
   end
 
   # GET /jobs/new
