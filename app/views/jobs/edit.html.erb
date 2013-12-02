@@ -22,6 +22,19 @@ Belongs to <%= link_to @job.category.title, @job.category %> category <br/>
 
 <%= link_to 'New video', new_job_video_path(@job) %> <br/><br/>
 
+<h3>Success Card</h3>
+<% @job.success_cards.each do |sc| %>
+<div>
+	<% if !sc.picture.nil? %>
+    <%= image_tag sc.picture.url(:square) %><br/>
+	<% end %>
+  <%= sc.name %> - <%= link_to 'Edit', edit_success_card_path(sc) %> -  <%= link_to 'Destroy', sc, method: :delete, data: { confirm: 'Are you sure?' } %><br/>
+</div>
+<% end %>
+
+
+<%= link_to 'New Success Card', new_job_success_card_path(@job) %> <br/><br/>
+
 <h3>Jobs in this category:</h3>
 <% @job.jobs.each do |job| %>
 <%= job.title %> - <%= link_to 'Show', job %> | <%= link_to 'Edit', edit_job_path(job) %><br/>

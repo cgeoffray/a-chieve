@@ -4,8 +4,10 @@ AChieve::Application.routes.draw do
   resources :users, only: [:show]
 
   resources :videos, :only => [:destroy, :show, :edit, :update]
+  resources :success_cards, :only => [:destroy, :show, :edit, :update]
   resources :jobs do
     resources :videos, :only => [:create, :index, :new, :home_page]
+    resources :success_cards, :only => [:create, :index, :new, :home_page]
     get "/new_job" => "jobs#new"
   end
 

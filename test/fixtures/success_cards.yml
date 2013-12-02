@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  job_title: MyString
+  income: 1
+  schooling: MyString
+  skills: MyText
+  fun_fact: MyText
+  challenges: MyText
+  find_out_more: MyText
+
+two:
+  job_title: MyString
+  income: 1
+  schooling: MyString
+  skills: MyText
+  fun_fact: MyText
+  challenges: MyText
+  find_out_more: MyText

@@ -1,0 +1,68 @@
+<%= form_for([@success_card]) do |f| %>
+  <% if @success_card.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@success_card.errors.count, "error") %> prohibited this success card from being saved:</h2>
+
+      <ul>
+        <% @success_card.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :job_title %><br>
+    <%= f.text_field :job_title %>
+  </div>
+  <div class="field">
+    <%= f.label :income%><br>
+    <%= f.number_field :income, min: 0 %>
+  </div>
+  <div class="field">
+    <%= f.label :schooling %><br>
+    <%= f.text_field :schooling %>
+  </div>
+  <div class="field">
+    <%= f.label :additional_training %><br>
+    <%= f.text_area :additional_training %>
+  </div>
+  <div class="field">
+    <%= f.label :skills %><br>
+    <%= f.text_area :skills%>
+  </div>
+  <div class="field">
+    <%= f.label :awards %><br>
+    <%= f.text_area :awards %>
+  </div>
+  <div class="field">
+    <%= f.label :fun_fact %><br>
+    <%= f.text_area :fun_fact %>
+  </div>
+  <div class="field">
+    <%= f.label :challenges %><br>
+    <%= f.text_area :challenges %>
+  </div>
+  <div class="field">
+    <%= f.label :find_out_more %><br>
+    <%= f.text_area :find_out_more %>
+  </div>
+
+  <% if !@success_card.picture.nil? %>
+    <h4>Current Picture</h4>
+    <%= image_tag @success_card.picture.url(:original) %><br/>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :picture %><br />
+    <%= f.file_field :picture %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
