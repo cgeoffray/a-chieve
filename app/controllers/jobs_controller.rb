@@ -9,7 +9,7 @@ class JobsController < ApplicationController
       @jobs = Job.includes(:videos).where(level: 0)
       @search = ""
     else
-      @jobs = Job.includes(:videos).where("title LIKE ?", params["search"])
+      @jobs = Job.includes(:videos).where("lower(title) LIKE ?","%" +  params["search"].downcase + "%")
       @search = params["search"]
     end
   end
@@ -19,7 +19,7 @@ class JobsController < ApplicationController
       @jobs = Job.includes(:videos).where(level: 0)
       @search = ""
     else
-      @jobs = Job.includes(:videos).where("title LIKE ?", params["search"])
+      @jobs = Job.includes(:videos).where("lower(title) LIKE ?","%" +  params["search"].downcase + "%")
       @search = params["search"]
     end
   end
@@ -37,7 +37,7 @@ class JobsController < ApplicationController
       @jobs = Job.includes(:videos).all
       @search = ""
     else
-      @jobs = Job.includes(:videos).where("title LIKE ?", params["search"])
+      @jobs = Job.includes(:videos).where("lower(title) LIKE ?","%" +  params["search"].downcase + "%")
       @search = params["search"]
     end
   end
