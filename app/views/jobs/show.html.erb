@@ -67,7 +67,12 @@
 </section>
 <section id="subcategories">
 <div class="job-container">
+
   <h2>Jobs in this category</h2>
+
+  <div id="container" class="js-masonry"
+       data-masonry-options='{ "columnWidth": 333, "itemSelector": ".item" }'>
+
   <% @subcategories.each do |subcategory| %>
     <% if !subcategory.videos.first.nil? %>
       <div class="item">
@@ -81,6 +86,8 @@
       </div>
     <% end %>
   <% end %>
+
+    </div>
 </div>
 </section>
 
