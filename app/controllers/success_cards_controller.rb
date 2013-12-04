@@ -8,6 +8,10 @@ class SuccessCardsController < ApplicationController
     @success_card = SuccessCard.find(params[:id])
   end
 
+  def index
+     @success_cards = SuccessCard.all
+  end
+
   def create
     @job = Job.find(params[:job_id])
     @success_card = @job.success_cards.build(success_card_params)
