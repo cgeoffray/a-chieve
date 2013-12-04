@@ -10,17 +10,17 @@
     <!--<h1>Discover your potential. Find the right path. Explore now!</h1>-->
     <div class="nav-btn">
       <h3>Career Information</h3>
-      <input src="/assets/suitcase.png" alt="careers" class="nav-icons" type="image" onclick="document.getElementById('categories').scrollIntoView();"/>
+      <input src="/assets/suitcase.png" alt="careers" class="nav-icons" type="image" onclick="javascript:location.reload(true);document.location='/jobs'"/>
     </div>
 
     <div class="nav-btn">
       <h3>Inspiring People</h3>
-      <input src="/assets/hero.png" alt="careers" class="nav-icons" type="image" onclick="document.getElementById('inspiration').scrollIntoView();"/>
+      <input src="/assets/hero.png" alt="careers" class="nav-icons" type="image" onclick="javascript:location.reload(true);document.location='/success_cards'"/>
     </div>
 
     <div class="nav-btn">
       <h3>A-chieve Events</h3>
-      <input src="/assets/calendar.png" alt="careers" class="nav-icons" type="image" onclick="document.getElementById('achieve').scrollIntoView();"/>
+      <input src="/assets/calendar.png" alt="careers" class="nav-icons" type="image" onclick="javascript:location.reload(true);document.location='/events'"/>
     </div>
 
     <!--<p><center>Scroll down to learn more</center></p>
@@ -95,6 +95,10 @@
     <h2> Stay connected to A-chieve events</h2>
 
     <%= render 'calendar' %>
+
+    <a href="javascript:location.reload(true);document.location='/events'" class="btn btn-primary">
+      Events page
+    </a>
 
   </div>
 
