@@ -15,13 +15,7 @@ class JobsController < ApplicationController
   end
 
   def home_page
-    if params["search"].nil? or params["search"]==""
       @jobs = Job.includes(:videos).where(level: 0)
-      @search = ""
-    else
-      @jobs = Job.includes(:videos).where("lower(title) LIKE ?","%" +  params["search"].downcase + "%")
-      @search = params["search"]
-    end
   end
 
   def about_us
