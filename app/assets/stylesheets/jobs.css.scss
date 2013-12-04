@@ -194,7 +194,7 @@ html, body{
 }
 
 #home-btn{
-  height: 100vh;
+  height: 600px;
   background: url("/assets/stripes.png");
   background-size: 1%;
   h2{
@@ -265,7 +265,7 @@ html, body{
 }
 
 #categories{
-  height: 100vh;
+  height: 500px;
   background-color: rgb(245,243,188);
   padding-left: 47px;
   padding-right: 47px;
@@ -284,7 +284,7 @@ html, body{
     display: block;
     width: 50%;
     margin-top: 15px;
-    height: 30px;
+    height: 50px;
     font-size: 20px;
     padding-top: 10px;
     border: 0;
@@ -301,7 +301,7 @@ html, body{
 }
 
 #inspiration{
-  height: 100vh;
+  min-height: 500px;
   background-color: rgb(190,210,255);
   padding-left: 47px;
   padding-right: 47px;
@@ -327,7 +327,7 @@ html, body{
     display: block;
     width: 50%;
     margin-top: 15px;
-    height: 30px;
+    height: 50px;
     font-size: 20px;
     padding-top: 10px;
     border: 0;
@@ -340,11 +340,25 @@ html, body{
   padding-left: 47px;
   padding-right: 47px;
   padding-top: 5px;
-  padding-bottom: 0px;
+  padding-bottom: 30px;
 
   h2{
     padding-top: 12px;
     color: rgb(25,20,15);
+  }
+
+  .btn{
+    background: rgba(10,10,10,0.3);
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 50%;
+    margin-top: 15px;
+    height: 50px;
+    font-size: 20px;
+    padding-top: 10px;
+    border: 0;
+    border-radius: 1px;
   }
 }
 
