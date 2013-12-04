@@ -75,8 +75,8 @@
         <div class="img-cont">
           <iframe width="314" height="187" src="<%= subcategory.videos.first.embed_url %>" frameborder="0" allowfullscreen></iframe><br/>
         </div>
-        <% if !current_user.nil? && current_user.watched(job.id) %>
-          <img src="assets/check.png" alt="" style="  top: -20px; position: relative; left: 285px; height: 15%;  ">
+        <% if !current_user.nil? && current_user.watched(subcategory.id) %>
+          <img src="/assets/check.png" alt="" style="  top: -20px; position: relative; left: 285px; height: 15%;  ">
         <% end %>
       </div>
     <% end %>
@@ -84,5 +84,4 @@
 </div>
 </section>
 
-<!--<%= link_to 'Edit', edit_job_path(@job) %>
 <%= link_to 'Back', jobs_path %>   -->
