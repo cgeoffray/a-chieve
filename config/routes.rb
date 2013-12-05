@@ -4,7 +4,7 @@ AChieve::Application.routes.draw do
   resources :users, only: [:show]
 
   resources :videos, :only => [:destroy, :show, :edit, :update]
-  resources :success_cards, :only => [:destroy, :show, :edit, :update]
+  resources :success_cards, :only => [:destroy, :show, :edit, :update, :index]
   resources :jobs do
     resources :videos, :only => [:create, :index, :new, :home_page, :update]
     resources :success_cards, :only => [:create, :index, :new, :home_page]
@@ -22,6 +22,8 @@ AChieve::Application.routes.draw do
   get "/partners" => "jobs#partners"
   
   get "/events" => "jobs#events"
+
+  get "/success_cards" => "success_cards#index"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -84,7 +84,12 @@
 </section>
 <section id="subcategories">
 <div class="job-container">
+
   <h2>Jobs in this category</h2>
+
+  <div id="container" class="js-masonry"
+       data-masonry-options='{ "columnWidth": 333, "itemSelector": ".item" }'>
+
   <% @subcategories.each do |subcategory| %>
     <% if !subcategory.videos.first.nil? %>
       <div class="item">
@@ -92,18 +97,17 @@
         <div class="img-cont">
           <iframe width="314" height="187" src="<%= subcategory.videos.first.embed_url %>" frameborder="0" allowfullscreen></iframe><br/>
         </div>
-        <% if !current_user.nil? && current_user.watched(@job.id) %>
-          <img src="assets/check.png" alt="" style="  top: -20px; position: relative; left: 285px; height: 15%;  ">
+        <% if !current_user.nil? && current_user.watched(subcategory.id) %>
+          <img src="/assets/check.png" alt="" style="  top: -20px; position: relative; left: 285px; height: 15%;  ">
         <% end %>
       </div>
     <% end %>
   <% end %>
+
+    </div>
 </div>
 <% if !current_user.nil? and current_user.role_id.in?([2,3]) %>
 <a name="add_category" data-toggle="modal" href="<%= job_new_job_path(@job) %>" class="btn btn-default masonry_item thumbnail grid-sizer" style="position: relative; left: 20px;" sl-processed="1"><h1 class="glyphicon glyphicon-plus"></h1><h1>Add a job to this category</h1></a>
 <br/><br/>
 <% end %>
 </section>
-
-<!--<%= link_to 'Edit', edit_job_path(@job) %>
-<%= link_to 'Back', jobs_path %>   -->
