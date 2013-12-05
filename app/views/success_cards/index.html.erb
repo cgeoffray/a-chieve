@@ -4,14 +4,28 @@
   </h2>
 </section>
 
-<section id="explore2">
+<section id="success_panel">
 
  <div id="container" class="js-masonry"
        data-masonry-options='{ "columnWidth": 333, "itemSelector": ".item" }'>
     <% if !@success_cards.empty? %>
     <% @success_cards.each do |sc| %>
             <div class="item">
-              <%= image_tag sc.picture.url(:square) %>
+              <div class="flipbox">
+                <%= image_tag sc.picture.url(:square) %>
+              </div>
+              <div class="flipback">
+                <b>Name : </b><%= sc.name %></br>
+                <b>Job Title : </b><%= sc.job_title %></br>
+                <b>Income : </b><%= sc.income %></br>
+                <b>Schooling : </b><%= sc.schooling %></br>
+                <b>Additional Training : </b><%= sc.additional_training %></br>
+                <b>Skills : </b><%= sc.skills %></br>
+                <b>Awards : </b><%= sc.awards %></br>
+                <b>Fun Fact : </b><%= sc.fun_fact %></br>
+                <b>Challenges : </b><%= sc.challenges %></br>
+                <b>Find out more : </b><%= sc.find_out_more %></br>
+              </div>
             </div>
     <% end %>
         <% end %>

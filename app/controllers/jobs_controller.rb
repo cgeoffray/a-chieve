@@ -27,6 +27,10 @@ class JobsController < ApplicationController
   end
 
   def admin
+    if current_user.nil? or !current_user.role_id.in?([2,3])
+      redirect_to "/"
+    end
+
     if params["search"].nil? or params["search"]==""
       @jobs = Job.includes(:videos).all
       @search = ""
@@ -52,6 +56,11 @@ class JobsController < ApplicationController
   # GET /jobs/new
   def new
     @job = Job.new
+
+    if current_user.nil? or !current_user.role_id.in?([2,3])
+      redirect_to @job
+    end
+    
     if params["job_id"].nil?
       @job.level = 0
     else
@@ -63,12 +72,19 @@ class JobsController < ApplicationController
 
   # GET /jobs/1/edit
   def edit
+    if current_user.nil? or !current_user.role_id.in?([2,3])
+      redirect_to @job
+    end
   end
 
   # POST /jobs
   # POST /jobs.json
   def create
     @job = Job.new(job_params)
+
+    if current_user.nil? or !current_user.role_id.in?([2,3])
+      redirect_to @job
+    end
 
     respond_to do |format|
       if @job.save
@@ -84,6 +100,10 @@ class JobsController < ApplicationController
   # PATCH/PUT /jobs/1
   # PATCH/PUT /jobs/1.json
   def update
+    if current_user.nil? or !current_user.role_id.in?([2,3])
+      redirect_to @job
+    end
+
     respond_to do |format|
       if @job.update(job_params)
         format.html { redirect_to @job, notice: 'Job was successfully updated.' }
@@ -98,6 +118,10 @@ class JobsController < ApplicationController
   # DELETE /jobs/1
   # DELETE /jobs/1.json
   def destroy
+    if current_user.nil? or !current_user.role_id.in?([2,3])
+      redirect_to @job
+    end
+    
     @job.destroy
     respond_to do |format|
       format.html { redirect_to jobs_url }

@@ -3,9 +3,17 @@
 
 <section id="description">
 <div class="job-container">
+  <h4>
+    <% if !@job.category.nil? %>
+    <%= link_to "<< Back to "+@job.category.title+" category", @job.category %>
+    <% end %>
+  </h4>
 
   <h2 class="title">
     <%= @job.title %>
+    <% if !current_user.nil? and current_user.role_id.in?([2,3]) %>
+    <a href="<%= edit_job_path(@job) %>" class="btn btn-default" data-method="get" sl-processed="1">Edit</a>
+    <% end %> 
   </h2>
   <div class="img-cont">
     <div id="MyCarousel" class="carousel slide">
@@ -55,7 +63,12 @@
       <div>
         <iframe width="530" height="315" src="<%= video.embed_url %>" frameborder="0" allowfullscreen class="job-video"></iframe>
         <p>
-        <span><%= video.title %></span>
+        <span>
+          <%= video.title %>
+          <% if !current_user.nil? and current_user.role_id.in?([2,3]) %>
+          <a href="<%= edit_video_path(video) %>" class="btn btn-default" data-method="get" sl-processed="1">Edit this video</a>
+          <% end %> 
+        </span>
         <br> <br>
         <%= video.description %>
         </p>
@@ -64,6 +77,10 @@
     <br>
   <% end %>
 </div>
+<% if !current_user.nil? and current_user.role_id.in?([2,3]) %>
+<a name="add_video" data-toggle="modal" href="<%= new_job_video_path(@job) %>" class="btn btn-default masonry_item thumbnail grid-sizer" style="position: relative; left: 20px;" sl-processed="1"><h1 class="glyphicon glyphicon-plus"></h1><h1>New video</h1></a>
+<br/><br/>
+<% end %>
 </section>
 <section id="subcategories">
 <div class="job-container">
@@ -89,6 +106,8 @@
 
     </div>
 </div>
+<% if !current_user.nil? and current_user.role_id.in?([2,3]) %>
+<a name="add_category" data-toggle="modal" href="<%= job_new_job_path(@job) %>" class="btn btn-default masonry_item thumbnail grid-sizer" style="position: relative; left: 20px;" sl-processed="1"><h1 class="glyphicon glyphicon-plus"></h1><h1>Add a job to this category</h1></a>
+<br/><br/>
+<% end %>
 </section>
-
-<%= link_to 'Back', jobs_path %>
