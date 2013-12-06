@@ -12,19 +12,21 @@
     <% @success_cards.each do |sc| %>
             <div class="item">
               <div class="flipbox">
-                <%= image_tag sc.picture.url(:square) %>
+                  <%= image_tag sc.picture.url(:square) %>
               </div>
               <div class="flipback">
-                <b>Name : </b><%= sc.name %></br>
-                <b>Job Title : </b><%= sc.job_title %></br>
-                <b>Income : </b><%= sc.income %></br>
-                <b>Schooling : </b><%= sc.schooling %></br>
-                <b>Additional Training : </b><%= sc.additional_training %></br>
-                <b>Skills : </b><%= sc.skills %></br>
-                <b>Awards : </b><%= sc.awards %></br>
-                <b>Fun Fact : </b><%= sc.fun_fact %></br>
-                <b>Challenges : </b><%= sc.challenges %></br>
-                <b>Find out more : </b><%= sc.find_out_more %></br>
+                <div class="flip_content">
+                  <b>Name : </b><%= sc.name %></br>
+                  <b>Job Title : </b><%= sc.job_title %></br>
+                  <b>Income : </b><%= sc.income %></br>
+                  <b>Schooling : </b><%= sc.schooling %></br>
+                  <b>Additional Training : </b><%= sc.additional_training %></br>
+                  <b>Skills : </b><%= sc.skills %></br>
+                  <b>Awards : </b><%= sc.awards %></br>
+                  <b>Fun Fact : </b><%= sc.fun_fact %></br>
+                  <b>Challenges : </b><%= sc.challenges %></br>
+                  <b>Find out more : </b><%= sc.find_out_more %></br>
+                </div>
               </div>
             </div>
     <% end %>

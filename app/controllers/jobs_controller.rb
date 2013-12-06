@@ -16,6 +16,7 @@ class JobsController < ApplicationController
 
   def home_page
       @jobs = Job.includes(:videos).where(level: 0)
+    @success_cards = SuccessCard.all()
   end
 
   def about_us
