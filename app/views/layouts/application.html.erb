@@ -13,7 +13,12 @@
     <a id="logo" href="javascript:location = location.href;document.location='/'">
       <%= image_tag "/assets/logo2.png"%>
     </a>
+    
     <p>Empowering <strong>YOU</strong>th to reach full <br>potential and <strong>live a passionate life</strong></p>
+
+    <% if !current_user.nil? and current_user.role_id.in?([2,3]) %>
+      <a href="javascript:location.reload(true);document.location='/admin'">Admin</a>
+    <% end %>
     <a href="javascript:location.reload(true);document.location='/jobs'">Careers</a>
     <a href="javascript:location = location.href;document.location='/success_cards'">Inspiration</a>
     <a href="javascript:location = location.href;document.location='/events'">Events</a>

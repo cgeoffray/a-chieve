@@ -64,6 +64,10 @@
           <% end %>
       <% end %>
     </div>
+    <% if !current_user.nil? and current_user.role_id.in?([2,3]) %>
+    <a name="add_category" data-toggle="modal" href="<%= new_job_path %>" class="btn btn-default masonry_item thumbnail grid-sizer" style="position: relative; left: 20px;" sl-processed="1"><h1 class="glyphicon glyphicon-plus"></h1><h1>Add a category</h1></a>
+    <br/><br/>
+    <% end %>
     <a href="javascript:location = location.href;document.location='/jobs'" class="btn btn-primary">
       See more...
     </a>

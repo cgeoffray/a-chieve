@@ -6,7 +6,7 @@ AChieve::Application.routes.draw do
   resources :videos, :only => [:destroy, :show, :edit, :update]
   resources :success_cards, :only => [:destroy, :show, :edit, :update, :index]
   resources :jobs do
-    resources :videos, :only => [:create, :index, :new, :home_page]
+    resources :videos, :only => [:create, :index, :new, :home_page, :update]
     resources :success_cards, :only => [:create, :index, :new, :home_page]
     get "/new_job" => "jobs#new"
   end
