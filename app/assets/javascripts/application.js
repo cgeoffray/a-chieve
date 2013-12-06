@@ -50,13 +50,14 @@ $(document).ready(function() {
 
 	var availableTags = [
       "test",
-      "autocomplete"
     ];
-    $("#tagsBox").tagit().autocomplete({
+    /*$("#tagsBox").tagit().autocomplete({
     	delay: 0,
     	minLength: 2,
 		source: availableTags
-	});
+	});*/
+
+
 
     $('.flipbox').bind("click",function(){
 
@@ -84,9 +85,6 @@ $(document).ready(function() {
                 direction:'lr',
                 speed: 350,
                 onBefore: function(){
-                    // Insert the contents of the .sponsorData div (hidden
-                    // from view with display:none) into the clicked
-                    // .sponsorFlip div before the flipping animation starts:
 
                     elem.html(elem.siblings('.flipback').html());
                 }
