@@ -92,7 +92,7 @@
 
   <% @subcategories.each do |subcategory| %>
     <% if !subcategory.videos.first.nil? %>
-      <div class="item">
+      <div class="item" style="display:block; float:left; margin-right: 20px;">
         <h4><%= link_to subcategory.title, subcategory %></h4>
         <div class="img-cont">
           <iframe width="314" height="187" src="<%= subcategory.videos.first.embed_url %>" frameborder="0" allowfullscreen></iframe><br/>
