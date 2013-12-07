@@ -5,6 +5,14 @@
   <input type="submit">
 </form>
 
+<h1>Manage Badges</h1>
+<h2>Point Badges</h2>
+<% @point_badges.each do |badge| %>
+  <a href="<%= edit_point_badge_path(badge) %>">
+    <%= image_tag badge.picture.url(:square) %>
+  </a>
+<% end %>
+<%= link_to 'New Point Badge', new_point_badge_path %>
 
 <h1>Listing jobs</h1>
 

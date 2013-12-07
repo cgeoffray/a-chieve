@@ -32,6 +32,8 @@ class JobsController < ApplicationController
       redirect_to "/"
     end
 
+    @point_badges = PointBadge.all
+
     if params["search"].nil? or params["search"]==""
       @jobs = Job.includes(:videos).all
       @search = ""

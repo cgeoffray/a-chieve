@@ -1,0 +1,2 @@
+module PointBadgesHelper
+end

@@ -19,6 +19,12 @@
   <%= @user.profile_name %>
   <%= @user.email %>
 </section>
-<% if  @user.role == 0 %>
+<section id="badges">
+<h2>Your badges</h2>
+<% @point_badges.each do |badge| %>
+  <%= image tag badge.picture.url(:square) %>
+<% end %>
+</section>
+<% if  @user.role_id == 3 || @user.role_id == 2 %>
   Congratz, you're an admin.
 <% end %>

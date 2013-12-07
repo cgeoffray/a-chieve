@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131128084245) do
+ActiveRecord::Schema.define(version: 20131206053647) do
 
   create_table "jobs", force: true do |t|
     t.string   "title"
@@ -21,6 +21,17 @@ ActiveRecord::Schema.define(version: 20131128084245) do
     t.datetime "updated_at"
     t.integer  "category_id"
     t.integer  "level"
+  end
+
+  create_table "point_badges", force: true do |t|
+    t.string   "name"
+    t.integer  "threshold"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "picture_file_name"
+    t.string   "picture_content_type"
+    t.integer  "picture_file_size"
+    t.datetime "picture_updated_at"
   end
 
   create_table "roles", force: true do |t|
@@ -66,6 +77,16 @@ ActiveRecord::Schema.define(version: 20131128084245) do
     t.string "name"
   end
 
+  create_table "user_point_badges", id: false, force: true do |t|
+    t.integer  "user_id"
+    t.integer  "point_badge_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "user_point_badges", ["point_badge_id"], name: "index_user_point_badges_on_point_badge_id"
+  add_index "user_point_badges", ["user_id"], name: "index_user_point_badges_on_user_id"
+
   create_table "users", force: true do |t|
     t.string   "first_name"
     t.string   "last_name"
@@ -84,6 +105,7 @@ ActiveRecord::Schema.define(version: 20131128084245) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "role_id",                default: 1
+    t.integer  "next_point_badge_id"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

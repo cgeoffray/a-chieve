@@ -3,6 +3,8 @@ AChieve::Application.routes.draw do
   devise_for :users
   resources :users, only: [:show]
 
+  resources :point_badges, only: [:create, :new, :edit, :destroy, :update]
+
   resources :videos, :only => [:destroy, :show, :edit, :update]
   resources :success_cards, :only => [:destroy, :show, :edit, :update, :index]
   resources :jobs do

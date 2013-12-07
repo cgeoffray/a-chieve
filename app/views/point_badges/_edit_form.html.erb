@@ -1,0 +1,35 @@
+<%= form_for(@badge) do |f| %>
+  <% if @badge.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@badge.errors.count, "error") %> prohibited this success card from being saved:</h2>
+
+      <ul>
+      <% @badge.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :point_threshold %><br>
+    <%= f.number_field :threshold, min: 0 %>
+  </div>
+  
+  <% if !@badge.picture.nil? %>
+    <h4>Current Picture</h4>
+    <%= image_tag @badge.picture.url(:original) %><br/>
+  <% end %>
+  <div class="field">
+    <%= f.label :picture %><br />
+    <%= f.file_field :picture %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
