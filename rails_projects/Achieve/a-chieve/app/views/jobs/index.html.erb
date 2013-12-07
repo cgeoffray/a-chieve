@@ -1,0 +1,38 @@
+<section id="search">
+  <h2>
+    Search for Career orientation, jobs or videos
+  </h2>
+
+  <form action="/" method="POST">
+    <input name="search" type="text" placeholder="Architect, James Bond, etc." value="<%= @search %>" id="searchbar"/>
+    <input type="submit" class="btn btn-small btn-primary"/>
+  </form>
+</section>
+
+<section id="explore2">
+  <h2>Explore our database of career paths</h2>
+
+  <div id="container" class="js-masonry"
+       data-masonry-options='{ "columnWidth": 333, "itemSelector": ".item" }'>
+    <% @jobs.each do |job| %>
+        <% if !job.videos.first.nil? %>
+            <div class="item">
+              <h4><%= link_to job.title, job %></h4>
+              <div class="img-cont">
+                <iframe width="314" height="187" src="<%= job.videos.first.embed_url %>" frameborder="0" allowfullscreen></iframe><br/>
+              </div>
+              <% if !current_user.nil? && current_user.watched(job.id) %>
+                  <img src="assets/check.png" alt="" style="  top: -20px; position: relative; left: 285px; height: 15%;  ">
+              <% end %>
+            </div>
+        <% end %>
+    <% end %>
+
+  </div>
+  <% if !current_user.nil? and current_user.role_id.in?([2,3]) %>
+  <a name="add_category" data-toggle="modal" href="<%= new_job_path %>" class="btn btn-default masonry_item thumbnail grid-sizer" style="position: relative; left: 20px;" sl-processed="1"><h1 class="glyphicon glyphicon-plus"></h1><h1>Add a category</h1></a>
+  <br/><br/>
+  <% end %>
+</section>
+
+

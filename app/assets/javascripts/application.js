@@ -26,16 +26,28 @@ $(function (){
     });
 
 jQuery(document).ready(function () {
-var container = document.querySelector('#container');
-var msnry = new Masonry( container, {
-    // options
-    columnWidth: 200,
-    itemSelector: '.item'
-});
-
+    var container = document.querySelector('#container');
+    var msnry = new Masonry( container, {
+        // options
+        columnWidth: 200,
+        itemSelector: '.item'
+    });
 })
 
+function scoreUp(new_points, total_points) {
+    $("#profile_link").html("Profile ("+total_points+")").effect("pulsate", {}, 500);
+    $("#scoreUp").html("+"+new_points).show().effect("fade", {}, 1500);
+}
+
 $(document).ready(function() {
+    if (typeof new_points === "undefined") {
+    } else {
+        scoreUp(new_points, total_points);
+    }
+
+
+
+
 	var availableTags = [
       "test",
     ];

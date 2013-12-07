@@ -1,0 +1,113 @@
+<!--<p id="notice"><%= notice %></p>-->
+
+
+<section id="description">
+<div class="job-container">
+  <h4>
+    <% if !@job.category.nil? %>
+    <%= link_to "<< Back to "+@job.category.title+" category", @job.category %>
+    <% end %>
+  </h4>
+
+  <h2 class="title">
+    <%= @job.title %>
+    <% if !current_user.nil? and current_user.role_id.in?([2,3]) %>
+    <a href="<%= edit_job_path(@job) %>" class="btn btn-default" data-method="get" sl-processed="1">Edit</a>
+    <% end %> 
+  </h2>
+  <div class="img-cont">
+    <div id="MyCarousel" class="carousel slide">
+      <div class="carousel-inner">
+        <% if !@success_cards.empty? %>
+          <% @success_cards.each_with_index do |sc, index| %>
+            <div class="item<% if index == 0 %> active<% end %>">
+              <%= image_tag sc.picture.url(:square) %> 
+            </div>
+            <div class="item">
+              <b>Name : </b><%= sc.name %></br>
+              <b>Job Title : </b><%= sc.job_title %></br>
+              <b>Income : </b><%= sc.income %></br>
+              <b>Schooling : </b><%= sc.schooling %></br>
+              <b>Additional Training : </b><%= sc.additional_training %></br>
+              <b>Skills : </b><%= sc.skills %></br>
+              <b>Awards : </b><%= sc.awards %></br>
+              <b>Fun Fact : </b><%= sc.fun_fact %></br>
+              <b>Challenges : </b><%= sc.challenges %></br>
+              <b>Find out more : </b><%= sc.find_out_more %></br>
+            </div>
+          <% end %>
+        <% else %>
+          <div class="item active">
+            <img src="/assets/success.png" alt="">
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <!--<img src="/assets/success.png" alt=""> -->
+  </div>
+  <p>
+  <strong>Description:</strong>
+  <%= @job.description %>
+  <br> <br>
+  <strong>Education:</strong>
+  <%= @job.education %>
+  </p>
+</div>
+</section>
+
+<section id="videos">
+<div class="job-container">
+
+  <% @job.videos.each do |video| %>
+    <% if !video.video_url.nil? %>
+      <div>
+        <iframe width="530" height="315" src="<%= video.embed_url %>" frameborder="0" allowfullscreen class="job-video"></iframe>
+        <p>
+        <span>
+          <%= video.title %>
+          <% if !current_user.nil? and current_user.role_id.in?([2,3]) %>
+          <a href="<%= edit_video_path(video) %>" class="btn btn-default" data-method="get" sl-processed="1">Edit this video</a>
+          <% end %> 
+        </span>
+        <br> <br>
+        <%= video.description %>
+        </p>
+      </div>
+    <% end %>
+    <br>
+  <% end %>
+</div>
+<% if !current_user.nil? and current_user.role_id.in?([2,3]) %>
+<a name="add_video" data-toggle="modal" href="<%= new_job_video_path(@job) %>" class="btn btn-default masonry_item thumbnail grid-sizer" style="position: relative; left: 20px;" sl-processed="1"><h1 class="glyphicon glyphicon-plus"></h1><h1>New video</h1></a>
+<br/><br/>
+<% end %>
+</section>
+<section id="subcategories">
+<div class="job-container">
+
+  <h2>Jobs in this category</h2>
+
+  <div id="container" class="js-masonry"
+       data-masonry-options='{ "columnWidth": 333, "itemSelector": ".item" }'>
+
+  <% @subcategories.each do |subcategory| %>
+    <% if !subcategory.videos.first.nil? %>
+      <div class="item" style="display:block; float:left; margin-right: 20px;">
+        <h4><%= link_to subcategory.title, subcategory %></h4>
+        <div class="img-cont">
+          <iframe width="314" height="187" src="<%= subcategory.videos.first.embed_url %>" frameborder="0" allowfullscreen></iframe><br/>
+        </div>
+        <% if !current_user.nil? && current_user.watched(subcategory.id) %>
+          <img src="/assets/check.png" alt="" style="  top: -20px; position: relative; left: 285px; height: 15%;  ">
+        <% end %>
+      </div>
+    <% end %>
+  <% end %>
+
+    </div>
+</div>
+<% if !current_user.nil? and current_user.role_id.in?([2,3]) %>
+<a name="add_category" data-toggle="modal" href="<%= job_new_job_path(@job) %>" class="btn btn-default masonry_item thumbnail grid-sizer" style="position: relative; left: 20px;" sl-processed="1"><h1 class="glyphicon glyphicon-plus"></h1><h1>Add a job to this category</h1></a>
+<br/><br/>
+<% end %>
+</section>

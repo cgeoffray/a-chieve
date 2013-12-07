@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  success_card_id: 1
+  training: MyString
+
+two:
+  success_card_id: 1
+  training: MyString
