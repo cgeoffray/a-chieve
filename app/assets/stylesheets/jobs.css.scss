@@ -188,15 +188,15 @@ html, body{
   width: 100%;
   height: 100%;
   overflow: hidden;
-  background: url("/assets/Front_Page_Picture_faded.jpg") no-repeat center;
+  background: url("/assets/Front_Page_Picture_dark.jpg") no-repeat center;
   background-size: cover;
   z-index: -1;
 }
 
 #home-btn{
   height: 600px;
-  background: url("/assets/stripes.png");
-  background-size: 1%;
+/*  background: url("/assets/stripes.png");
+  background-size: 1%;*/
   h2{
     color: white;
     font-size: 45px;
@@ -223,9 +223,12 @@ html, body{
     margin-top: 24%;
     width: 26%;
     padding-bottom: 50px;
+    h3{
+      color: #ffffff;
+    }
   }
   .nav-icons{
-    height: 120px;
+    height: 150px;
     margin-bottom: 5px;
     margin-top: 10px;
     margin-left: auto;
