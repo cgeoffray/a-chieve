@@ -7,10 +7,17 @@ class PointBadge < ActiveRecord::Base
     medium: '300x300>'
   }
 
-  after_create :update_users
+  after_save :update_users, if: :threshold_changed?
 
   private
   def update_users
-
+    users_more = User.where("points >= ?", self.threshold)
+    users_more.each do |user|
+      user.point_badges << self
+    end
+    users_less = User.where("points < ?", self.threshold)
+    users_less.each do |user|
+      user.point_badges.delete(self)
+    end
   end
 end
