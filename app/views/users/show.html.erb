@@ -1,15 +1,31 @@
 <div id="avatar">
+  <h3>Avatar level</h3>
   <img src="/assets/gingerbread.png" alt="">
 </div>
+<div id="badges">
+  <h3>My badges</h3>
+  <div class="badge"></div>
+  <div class="badge"></div>
+  <div class="badge"></div>
+  <div class="badge"></div>
+  <div class="badge"></div>
+  <div class="badge"></div>
+  <div class="badge"></div>
+  <div class="badge"></div>
+</div>
 
-<h1><%= @user.profile_name %></h1>
+<div id="points">
 
-<aside>
-  <div id="top"><h2>My Score</h2></div>
-  <div id="down">
-    <%= @user.points %>
+  <h3><%= @user.profile_name %></h3>
+  <br>
+
+  <div id="meter">
+    <div id="top"><h2>My Score</h2></div>
+    <div id="down">
+      <%= @user.points %>
+    </div>
   </div>
-</aside>
+</div>
 <section id="personal">
   <h2>
     Personal information

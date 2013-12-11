@@ -1,0 +1,38 @@
+// Place all the styles related to the success_card controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+$blue: rgb(71,176,236);
+$orange: rgb(255,131,49);
+$chocolate: rgba(120,105,58,0.68);
+$green: rgb(40,180,100);
+
+#success_panel{
+
+  .item{
+    width: 250px;
+    height: 350px;
+
+
+
+    .flip_content{
+      background: $blue;
+      padding: 5px;
+      width: 250px;
+      height: 350px;
+
+      color: white;
+      font-size: 1.2em;
+    }
+  }
+
+  img{
+    height: 350px;
+  }
+
+  .flipback{
+    display: none;
+  }
+
+
+
+}

@@ -87,9 +87,6 @@
 
   <h2>Jobs in this category</h2>
 
-  <div id="container" class="js-masonry"
-       data-masonry-options='{ "columnWidth": 333, "itemSelector": ".item" }'>
-
   <% @subcategories.each do |subcategory| %>
     <% if !subcategory.videos.first.nil? %>
       <div class="item" style="display:block; float:left; margin-right: 20px;">
@@ -104,7 +101,6 @@
     <% end %>
   <% end %>
 
-    </div>
 </div>
 <% if !current_user.nil? and current_user.role_id.in?([2,3]) %>
 <a name="add_category" data-toggle="modal" href="<%= job_new_job_path(@job) %>" class="btn btn-default masonry_item thumbnail grid-sizer" style="position: relative; left: 20px;" sl-processed="1"><h1 class="glyphicon glyphicon-plus"></h1><h1>Add a job to this category</h1></a>

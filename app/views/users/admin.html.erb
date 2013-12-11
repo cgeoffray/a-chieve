@@ -1,0 +1,40 @@
+
+<br/><br/><br/>
+<%= link_to 'Shops', "/admin" %> - <%= link_to 'Users', "/admin/users" %>
+
+
+<h1>Which profile name?</h1>
+<form action="/admin/users" method="POST">
+  <input name="search" type="text" value="<%= @search %>"/>
+  <input type="submit">
+</form>
+
+<h1>Listing Users</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Profile Name</th>
+      <th>Email</th>
+      <th></th>
+      <th>Define as</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.first_name %></td>
+        <td><%= user.last_name %></td>
+        <td><%= user.profile_name %></td>
+        <td><%= user.email %></td>
+        <td><%= link_to 'Show', user %></td>
+        <td><%= form_tag("/admin/user_role/"+user.id.to_s, method: "get") do %><%= select_tag(:role_id, options_for_select([['Regular', 1], ['Moderator', 2], ['Administrator', 3]], user.role_id)) %><%= submit_tag("Ok") %><% end %></td>
+        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

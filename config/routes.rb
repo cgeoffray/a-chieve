@@ -19,6 +19,9 @@ AChieve::Application.routes.draw do
 
   get "/admin" => "jobs#admin"
   post "/admin" => "jobs#admin"
+  get "/admin/users" => "users#admin"
+  post "/admin/users" => "users#admin"
+  get "/admin/user_role/:user_id" => "users#user_role"
 
   get "/about_us" => "jobs#about_us"
   get "/partners" => "jobs#partners"

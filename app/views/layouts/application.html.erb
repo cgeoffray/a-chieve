@@ -4,6 +4,7 @@
     <title>AChieve</title>
     <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <script src="//code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
     <%= csrf_meta_tags %>
   </head>
 
@@ -23,7 +24,7 @@
     <a href="javascript:location = location.href;document.location='/success_cards'">Inspiration</a>
     <a href="javascript:location = location.href;document.location='/events'">Events</a>
     <% if user_signed_in? %>
-      <%= link_to "Profile", current_user, class: :link %>
+      <%= link_to "Profile ("+current_user.points.to_s+")", current_user, :class => "link", :id => "profile_link" %>
       <%= link_to "Logout", destroy_user_session_path, class: :link, method: :delete %>
     <% else %>
       <div class="dropdown">
@@ -45,6 +46,9 @@
     <% end %>
 
     </header>
+
+    <div style="position:absolute; right:20px; top:70px; color:red; font-size:50px; display:none;" id="scoreUp">+100</div>
+
     <div id="page_block">
 
 
@@ -78,3 +82,10 @@
 
   </body>
 </html>
+
+<% if defined?(@new_points) and !current_user.nil? %>
+  <%= javascript_tag do %>
+    window.new_points = '<%= j @new_points.to_s %>';
+    window.total_points = '<%= j current_user.points.to_s %>';
+  <% end %>
+<% end %>

@@ -1,0 +1,234 @@
+$blue: rgb(71,176,236);
+$orange: rgb(255,131,49);
+$chocolate: rgba(120,105,58,0.68);
+$green: rgb(40,180,100);
+
+header{
+  width: 100%;
+  background: $blue;
+  height: 60px;
+  box-shadow: 0px 0px 25px;
+
+  a{
+    margin-left: 50px;
+    font-size: 1.2em;
+    color: white;
+
+    &:hover{
+      background: none;
+      text-decoration: underline;
+    }
+  }
+  p{
+    display: inline-block;
+    margin-left: 10px;
+    font-size: 1.0em;
+    color: white;
+    vertical-align: bottom;
+    margin-right: 8%;
+
+    strong{
+      color: rgb(255,145,60);
+    }
+  }
+
+  #logo{
+    margin-right: 2%;
+    &:hover{
+      background: none;
+      color: transparent;
+    }
+  }
+
+  img{
+    margin: -30px;
+    margin-left: 8%;
+    height: 122px;
+    width: auto;
+  }
+
+}
+
+.dropdown-menu{
+  background: rgba(250,250,255,0.95);
+  padding: 10px;
+  border-radius: 0px;
+  margin-top: 20px;
+
+  form{
+    margin: 0;
+  }
+  .inputs{
+    background: white;
+    &:focus{
+      background: white;
+    }
+    &:-webkit-autofill{
+      background: white !important;
+    }
+  }
+
+  .texts{
+    color: rgb(30,30,30);
+  }
+  #remember_me{
+    float: left;
+    margin-right: 15px;
+  }
+
+  a{
+    font-size: 12px;
+    margin-left: 92px;
+    color: rgb(30,30,30);
+    &:hover{
+      color:black;
+      text-decoration: underline;
+    }
+  }
+  .btn-primary{
+    display: inline-block;
+    width: 60%;
+    background: $blue;
+  }
+  .btn-default{
+    display: inline-block;
+    width: 20%;
+    margin: 0;
+    margin-left: 5px;
+  }
+}
+
+#page_block {
+  width: 100%;
+  min-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+body {
+  background-color: #fff;
+  color: #333;
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+
+footer{
+  width:100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: $chocolate;
+  padding-top: 20px;
+  padding-bottom: 25px;
+  text-align: center;
+
+  a{
+    color: white;
+    border-right: dotted 1px white;
+    padding-right: 10px;
+    padding-left: 10px;
+    &:hover{
+      background: none;
+    }
+  }
+
+  #social{
+    margin-top: 15px;
+    img{ height: 20px; }
+
+    a{
+      border: none;
+
+    &:hover{
+      text-decoration: none;
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+a {
+  color: #000;
+  &:hover {
+    color: #fff;
+    background-color: #000;
+  }
+}
+
+div {
+  &.field, &.actions {
+    margin-bottom: 10px;
+  }
+}
+
+#notice {
+  color: green;
+}
+
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+  h2 {
+    text-align: left;
+    font-weight: bold;
+    padding: 5px 5px 5px 15px;
+    font-size: 12px;
+    margin: -7px;
+    margin-bottom: 0px;
+    background-color: #c00;
+    color: #fff;
+  }
+  ul li {
+    font-size: 12px;
+    list-style: square;
+  }
+}
+
+h2{
+  text-align: center;
+}
+
+.formblock{
+  display: inline-block;
+  vertical-align: middle;
+  width: 300px;
+}
+.dropdown{
+	display: inline-block;
+}

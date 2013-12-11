@@ -1,0 +1,46 @@
+<%= form_for(@job) do |f| %>
+  <% if @job.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@job.errors.count, "error") %> prohibited this job from being saved:</h2>
+
+      <ul>
+      <% @job.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <ul id="tagsBox">
+  </ul>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :education %><br>
+    <%= f.text_area :education %>
+  </div>
+
+  <% if @job.level == 0 %>
+  This is a category
+  <%= f.hidden_field :level, :value => 0 %>
+  <% elsif @job.level.nil? %>
+  <%= f.hidden_field :level, :value => 0 %>
+  <% elsif @job.level != 0 %>
+  <div class="field">
+    <%= f.label :category %>
+    <%= @job.category.title %>
+    <%= f.hidden_field :category_id, :value => @job.category.id %>
+    <%= f.hidden_field :level, :value => @job.category.level + 1 %>
+  </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
