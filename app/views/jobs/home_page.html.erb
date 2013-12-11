@@ -5,8 +5,8 @@
   </div>
   <div id="home-btn">
     <!--    <h2>
-          What kind of job are you <span>interested in ?</span>
-        </h2>-->
+      What kind of job are you <span>interested in ?</span>
+    </h2>-->
     <!--<h1>Discover your potential. Find the right path. Explore now!</h1>-->
     <div class="nav-btn">
       <h3>Career Information</h3>
@@ -17,13 +17,13 @@
     <div class="nav-btn">
       <h3>Inspiring People</h3>
       <input src="/assets/heroiconwhite.png" alt="careers" class="nav-icons" type="image" onclick="javascript:location.reload(true);document.location='/success_cards'"
-             onmouseover="this.src='/assets/heroicon.png'" onmouseout="this.src='/assets/heroiconwhite.png'"/>
+      onmouseover="this.src='/assets/heroicon.png'" onmouseout="this.src='/assets/heroiconwhite.png'"/>
     </div>
 
     <div class="nav-btn">
       <h3>A-chieve Events</h3>
       <input src="/assets/calendariconwhite.png" alt="careers" class="nav-icons" type="image" onclick="javascript:location.reload(true);document.location='/events'"
-             onmouseover="this.src='/assets/calendar.png'" onmouseout="this.src='/assets/calendariconwhite.png'"/>
+      onmouseover="this.src='/assets/calendar.png'" onmouseout="this.src='/assets/calendariconwhite.png'"/>
     </div>
 
     <!--<p><center>Scroll down to learn more</center></p>
@@ -38,94 +38,94 @@
 
 <section id="explore">
 
-  <!--<div id="home-banner">
+<!--<div id="home-banner">
 
-&lt;!&ndash;  <div id="nav-bar">
+  &lt;!&ndash;  <div id="nav-bar">
     <input src="/assets/suitcase.png" alt="careers" class="nav-icons" type="image" onclick="document.getElementById('categories').scrollIntoView();"/>
     <input src="/assets/hero.png" alt="careers" class="nav-icons" type="image" onclick="document.getElementById('categories').scrollIntoView();"/>
     <input src="/assets/calendar.png" alt="careers" class="nav-icons" type="image" onclick="document.getElementById('categories').scrollIntoView();"/>
   </div>&ndash;&gt;
-        </div>-->
+</div>-->
 
-  <div id="categories">
+<div id="categories">
 
-    <h2> Explore our database of career paths</h2>
-    <div id="container" class="js-masonry"
-      data-masonry-options='{ "columnWidth": 333, "itemSelector": ".item" }'>
-      <% @jobs.first(3).each do |job| %>
+  <h2> Explore our database of career paths</h2>
+  <div id="container" class="js-masonry"
+    data-masonry-options='{ "columnWidth": 333, "itemSelector": ".item" }'>
+    <% @jobs.first(3).each do |job| %>
+      <div class="item">
+        <h4><%= link_to job.title, job %></h4>
+
+        <div class="img-cont">
           <% if !job.videos.first.nil? %>
-              <div class="item">
-                <h4><%= link_to job.title, job %></h4>
-
-                <div class="img-cont">
-                  <iframe width="314" height="187" src="<%= job.videos.first.embed_url %>" frameborder="0" allowfullscreen></iframe><br/>
-                </div>
-                <% if !current_user.nil? && current_user.watched(job.id) %>
-                    <img src="assets/check.png" alt="" style="  top: -20px; position: relative; left: 285px; height: 15%;  ">
-                <% end %>
-              </div>
+            <iframe width="314" height="187" src="<%= job.videos.first.embed_url %>" frameborder="0" allowfullscreen></iframe><br/>
           <% end %>
-      <% end %>
-    </div>
-    <% if !current_user.nil? and current_user.role_id.in?([2,3]) %>
+        </div>
+        <% if !current_user.nil? && current_user.watched(job.id) %>
+          <img src="assets/check.png" alt="" style="  top: -20px; position: relative; left: 285px; height: 15%;  ">
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+  <% if !current_user.nil? and current_user.role_id.in?([2,3]) %>
     <a name="add_category" data-toggle="modal" href="<%= new_job_path %>" class="btn btn-default masonry_item thumbnail grid-sizer" style="position: relative; left: 20px;" sl-processed="1"><h1 class="glyphicon glyphicon-plus"></h1><h1>Add a category</h1></a>
     <br/><br/>
+  <% end %>
+  <a href="javascript:location = location.href;document.location='/jobs'" class="btn btn-primary">
+    See more...
+  </a>
+</div>
+
+<div id="inspiration">
+
+  <h2> Get inspired by success stories</h2>
+  <section id="success_panel">
+
+  <div id="container" class="js-masonry"
+    data-masonry-options='{ "columnWidth": 333, "itemSelector": ".item" }'>
+    <% if !@success_cards.empty? %>
+      <% @success_cards.first(3).each do |sc| %>
+        <div class="item">
+          <div class="flipbox">
+            <%= image_tag sc.picture.url(:square) %>
+          </div>
+          <div class="flipback">
+            <div class="flip_content">
+              <b>Name : </b><%= sc.name %></br>
+              <b>Job Title : </b><%= sc.job_title %></br>
+              <b>Income : </b><%= sc.income %></br>
+              <b>Schooling : </b><%= sc.schooling %></br>
+              <b>Additional Training : </b><%= sc.additional_training %></br>
+              <b>Skills : </b><%= sc.skills %></br>
+              <b>Awards : </b><%= sc.awards %></br>
+              <b>Fun Fact : </b><%= sc.fun_fact %></br>
+              <b>Challenges : </b><%= sc.challenges %></br>
+              <b>Find out more : </b><%= sc.find_out_more %></br>
+            </div>
+          </div>
+        </div>
+      <% end %>
     <% end %>
-    <a href="javascript:location = location.href;document.location='/jobs'" class="btn btn-primary">
-      See more...
-    </a>
-  </div>
-
-  <div id="inspiration">
-
-    <h2> Get inspired by success stories</h2>
-    <section id="success_panel">
-
-      <div id="container" class="js-masonry"
-           data-masonry-options='{ "columnWidth": 333, "itemSelector": ".item" }'>
-        <% if !@success_cards.empty? %>
-            <% @success_cards.first(3).each do |sc| %>
-                <div class="item">
-                  <div class="flipbox">
-                    <%= image_tag sc.picture.url(:square) %>
-                  </div>
-                  <div class="flipback">
-                    <div class="flip_content">
-                      <b>Name : </b><%= sc.name %></br>
-                      <b>Job Title : </b><%= sc.job_title %></br>
-                      <b>Income : </b><%= sc.income %></br>
-                      <b>Schooling : </b><%= sc.schooling %></br>
-                      <b>Additional Training : </b><%= sc.additional_training %></br>
-                      <b>Skills : </b><%= sc.skills %></br>
-                      <b>Awards : </b><%= sc.awards %></br>
-                      <b>Fun Fact : </b><%= sc.fun_fact %></br>
-                      <b>Challenges : </b><%= sc.challenges %></br>
-                      <b>Find out more : </b><%= sc.find_out_more %></br>
-                    </div>
-                  </div>
-                </div>
-            <% end %>
-        <% end %>
-
-      </div>
-    </section>
-
-    <a href="javascript:location = location.href;document.location='/success_cards'" class="btn btn-primary">
-      See more...
-    </a>
-  </div>
-
-  <div id="achieve">
-
-    <h2> Stay connected to A-chieve events</h2>
-
-    <%= render 'calendar' %>
-
-    <a href="javascript:location.reload(true);document.location='/events'" class="btn btn-primary">
-      Events page
-    </a>
 
   </div>
+  </section>
+
+  <a href="javascript:location = location.href;document.location='/success_cards'" class="btn btn-primary">
+    See more...
+  </a>
+</div>
+
+<div id="achieve">
+
+  <h2> Stay connected to A-chieve events</h2>
+
+  <%= render 'calendar' %>
+
+  <a href="javascript:location.reload(true);document.location='/events'" class="btn btn-primary">
+    Events page
+  </a>
+
+</div>
 
 </section>
 
